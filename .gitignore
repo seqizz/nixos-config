@@ -1,2 +1,3 @@
 secrets.nix
 websites.nix
+**/helper-modules/symbols/

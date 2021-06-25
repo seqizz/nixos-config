@@ -10,16 +10,16 @@ xkb_symbols "workman-p-tr" {
     include "us(basic)"
 
     // Alphanumeric section
-    key <AE01> {  [     1, exclam       ] };
-    key <AE02> {  [     2, apostrophe   ] };
-    key <AE03> {  [     3, asciicircum  ] };
-    key <AE04> {  [     4, plus, dollar ] };
-    key <AE05> {  [     5, percent      ] };
-    key <AE06> {  [     6, ampersand    ] };
-    key <AE07> {  [     7, slash        ] };
-    key <AE08> {  [     8, parenleft    ] };
-    key <AE09> {  [     9, parenright   ] };
-    key <AE10> {  [     0, equal        ] };
+    key <AE01> {  [     1,  exclam                                  ] };
+    key <AE02> {  [     2,  apostrophe                              ] };
+    key <AE03> {  [     3,  asciicircum                             ] };
+    key <AE04> {  [     4,  plus, dollar                            ] };
+    key <AE05> {  [     5,  percent                                 ] };
+    key <AE06> {  [     6,  ampersand                               ] };
+    key <AE07> {  [     7,  slash,  braceleft,  braceleft           ] };
+    key <AE08> {  [     8,  parenleft,  bracketleft,  bracketleft   ] };
+    key <AE09> {  [     9,  parenright,  bracketright, bracketright ] };
+    key <AE10> {  [     0,  equal,  braceright,  braceright         ] };
 
     key <AD01> {  [   q,  Q,  at                                ] };
     key <AD02> {  [   d,  D                                     ] };
