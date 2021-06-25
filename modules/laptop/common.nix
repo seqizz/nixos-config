@@ -8,6 +8,7 @@ in
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
     ../aliases.nix
+    ../gitconfig.nix
     ../overlays.nix
     ../packages.nix
     ../neovim.nix
