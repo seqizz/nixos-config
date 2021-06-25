@@ -1,0 +1,40 @@
+{ config, lib, pkgs, ... }:
+
+{
+  services = {
+    pcscd.enable = true; # smartcard daemon, needed for yubikey
+    udev.extraRules = ''
+      ATTRS{idVendor}=="1050", ATTRS{idProduct}=="0407", MODE="664", GROUP="adm"
+    ''; # Optional, if you have a user/group preference
+  };
+
+  systemd.services.pcscd = { # Causes pcscd to ignore non-auth one
+    environment = {
+      PCSCLITE_FILTER_IGNORE_READER_NAMES = "Yubico YubiKey OTP+FIDO+CCID";
+    };
+  };
+
+  programs = {
+    ssh = {
+      startAgent = true;
+      agentPKCS11Whitelist = "/nix/store/*";
+    };
+    gnupg.agent = {
+      enable = true;
+      enableBrowserSocket = true;
+      # enableSSHSupport = true; # OMG SO SECURE AND SLOW
+    };
+  };
+
+  environment.systemPackages = with pkgs; [
+    ccid
+    gnupg
+    opensc
+    pcsctools
+    pcsclite
+    pinentry_qt5
+    # those 2 are only needed for initial setup
+    # yubikey-manager
+    # yubico-piv-tool
+  ];
+}
