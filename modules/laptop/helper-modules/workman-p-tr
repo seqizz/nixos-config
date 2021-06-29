@@ -10,6 +10,7 @@ xkb_symbols "workman-p-tr" {
     include "us(basic)"
 
     // Alphanumeric section
+    key <TLDE> {  [     asciitilde, grave, grave, grave             ] };
     key <AE01> {  [     1,  exclam                                  ] };
     key <AE02> {  [     2,  apostrophe                              ] };
     key <AE03> {  [     3,  asciicircum                             ] };
@@ -42,7 +43,7 @@ xkb_symbols "workman-p-tr" {
     key <AC07> {  [   n,  N                           ] };
     key <AC08> {  [   e,  E                           ] };
     key <AC09> {  [   o,  O,  odiaeresis,  Odiaeresis ] };
-    key <AC10> {  [   i,  Iabovedot,  idotless,  I    ] };
+    key <AC10> {  [   i,  I,  idotless,  Iabovedot    ] };
     key <AC11> {  [   bar,  backslash                 ] };
 
     key <AB01> {  [   z,  Z                         ] };
