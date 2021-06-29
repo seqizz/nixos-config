@@ -49,7 +49,7 @@ in
     ];
     description = "Comment engine for gurkan.in";
     environment = {
-      SECRET = remarkSecret;
+      SECRET = secrets.remarkSecret;
       REMARK_URL = "https://gurkan.in/comments";
       AUTH_ANON = "true";
       STORE_BOLT_PATH = "/shared/comment-engine/dbs";
