@@ -38,6 +38,10 @@ in
     enableManageSieve = true;
     virusScanning = false;
     localDnsResolver = false;
+    # Just reject those spoofers of known domains, will increase the list later
+    policydSPFExtraConfig = ''
+      Reject_Not_Pass_Domains = live.com,aol.com,hotmail.com,gmail.com,yahoo.com
+    '';
 	mailboxes = {
       Trash = {
         auto = "no";
