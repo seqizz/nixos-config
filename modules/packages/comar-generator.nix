@@ -1,4 +1,5 @@
 { lib
+, fetchgit
 , python3Packages
 }:
 python3Packages.buildPythonPackage rec {
@@ -6,9 +7,10 @@ python3Packages.buildPythonPackage rec {
   pname = "comar-generator";
   version = "1.0.0";
 
-  src = builtins.fetchGit {
+  src = fetchgit {
     url = "https://git.gurkan.in/gurkan/comar-generator.git";
-    ref = "master";
+    rev = "51dd492";
+    sha256 = "14a9zlrpnh17151bp26s9yjyhdahjifc2r89k4aj4jivmh4p5yhf";
   };
 
   propagatedBuildInputs = with python3Packages; [

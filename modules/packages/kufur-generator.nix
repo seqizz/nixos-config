@@ -10,8 +10,8 @@ python3Packages.buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "seqizz";
     repo = "kufur-generator";
-    rev = "f4c56cc";
-    sha256 = "0zs9q07aachymjn01fj3cv1qspidai08lg2l4s0j52p2g8iw0zpn";
+    rev = "5a049c6";
+    sha256 = "0rcchgrb2562d4hnvsq6mia86l6v8rw8x23l968cmkj79f0ami06";
   };
 
   propagatedBuildInputs = with python3Packages; [
