@@ -6,6 +6,7 @@
   # ) { config = baseconfig; };
 # in
 {
+  imports = [ ./helper-modules/clipcat.nix ];
 
   sound.enable = true;
 
@@ -13,7 +14,8 @@
     acpid.enable = true;
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
-    greenclip.enable = true; # clipboard daemon
+    # greenclip.enable = true; # clipboard daemon
+    clipcat.enable = true; # clipboard daemon
     # @Reference to unmark a broken haskell package, wth..
     # greenclip.package = (with pkgs.haskell.lib; markUnbroken (addExtraLibrary pkgs.haskellPackages.greenclip pkgs.xlibs.libXScrnSaver));
     gvfs.enable = true;
@@ -78,34 +80,36 @@
     };
   };
 
-  systemd.services = {
-    # Do not restart these, since it fucks up the current session
-    systemd-logind.restartIfChanged = false;
-    polkit.restartIfChanged = false;
-    display-manager.restartIfChanged = false;
-    NetworkManager.restartIfChanged = false;
-    wpa_supplicant.restartIfChanged = false;
+  systemd = {
+    services = {
+      # Do not restart these, since it fucks up the current session
+      systemd-logind.restartIfChanged = false;
+      polkit.restartIfChanged = false;
+      display-manager.restartIfChanged = false;
+      NetworkManager.restartIfChanged = false;
+      wpa_supplicant.restartIfChanged = false;
 
-    lock-before-sleeping = {
+      lock-before-sleeping = {
 
-      restartIfChanged = false;
+        restartIfChanged = false;
 
-      unitConfig = {
-        Description = "Helper service to bind locker to sleep.target";
-      };
-      serviceConfig = {
-        ExecStart = "${pkgs.slock}/bin/slock";
-        Type = "simple";
-      };
-      before = [
-        "pre-sleep.service"
-      ];
-      wantedBy= [
-        "pre-sleep.service"
-      ];
-      environment = {
-        DISPLAY = ":0";
-        XAUTHORITY = "/home/gurkan/.Xauthority";
+        unitConfig = {
+          Description = "Helper service to bind locker to sleep.target";
+        };
+        serviceConfig = {
+          ExecStart = "${pkgs.slock}/bin/slock";
+          Type = "simple";
+        };
+        before = [
+          "pre-sleep.service"
+        ];
+        wantedBy= [
+          "pre-sleep.service"
+        ];
+        environment = {
+          DISPLAY = ":0";
+          XAUTHORITY = "/home/gurkan/.Xauthority";
+        };
       };
     };
   };
