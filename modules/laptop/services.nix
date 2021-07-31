@@ -15,10 +15,10 @@
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
     greenclip.enable = true; # clipboard daemon
-    # clipcat.enable = true; # clipboard daemon
     # @Reference to unmark a broken haskell package, wth..
     # greenclip.package = (with pkgs.haskell.lib; markUnbroken (addExtraLibrary pkgs.haskellPackages.greenclip pkgs.xlibs.libXScrnSaver));
     gvfs.enable = true;
+    lorri.enable = true;
     printing.enable = true;
     udisks2.enable = true; # automount daemon
 
