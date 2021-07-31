@@ -10,9 +10,14 @@
     less.enable = true;
   };
 
-  nixpkgs.config = {
-    enable = true;
-    allowUnfree = true;
+  nixpkgs = {
+      config = {
+      enable = true;
+      allowUnfree = true;
+    };
+    overlays = [
+      (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/6d957c2105a5a548211c412fbc97bae81b7b8eb6.tar.gz"))
+    ];
   };
 
   environment.systemPackages = with pkgs; [
