@@ -17,6 +17,7 @@
     ./bots/timezone-bot.nix
     ./comment-engine.nix
     ./gitea.nix
+    ./logrotate.nix
     ./mailserver.nix
     ./shadowsocks.nix
     ./shared-folder.nix
