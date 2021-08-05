@@ -5,7 +5,7 @@
     rootUrl = "https://git.gurkan.in";
     appName = "My git forks";
     httpAddress = "127.0.0.1";
-    log.level = "Info";
+    log.level = "Warn";
     domain = "git.gurkan.in";
     disableRegistration = true;
     settings = {
