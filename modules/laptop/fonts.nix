@@ -11,22 +11,28 @@ in
     fonts = with pkgs; [
       comic-relief
       corefonts
-      dina-font
-      fira-code
-      fira-code-symbols
       font-awesome_4
       font-awesome-ttf
-      inconsolata
       ionicons
       liberation_ttf
       lineicons
       mplus-outline-fonts
+      (nerdfonts.override {
+        fonts = [
+          "Agave"
+          "FiraCode"
+          "Inconsolata"
+          "JetBrainsMono"
+          "LiberationMono"
+          "Overpass"
+          "SourceCodePro"
+          "Ubuntu"
+          "UbuntuMono"
+        ];
+      })
       noto-fonts
       powerline-fonts
-      proggyfonts
-      source-code-pro
       twemoji-color-font
-      ubuntu_font_family
     ];
   };
 }
