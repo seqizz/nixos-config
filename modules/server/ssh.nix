@@ -11,8 +11,6 @@ in
 
   services.openssh = {
     enable = true;
-    extraConfig = ''
-      Banner /shared/.sshd_banner
-    '';
+    banner = builtins.readFile /shared/.sshd_banner;
   };
 }
