@@ -2,14 +2,7 @@
 {
   imports =
   [
-    ../aliases.nix
-    ../gitconfig.nix
-    ../neovim.nix
-    ../overlays.nix
-    ../packages.nix
-    ../snapper.nix
-    ../syncthing.nix
-    ../users.nix
+    ../common.nix
 
     ./bind.nix
     ./bots/comar-bot.nix
@@ -19,6 +12,7 @@
     ./gitea.nix
     ./logrotate.nix
     ./mailserver.nix
+    ./rustypaste.nix
     ./shadowsocks.nix
     ./shared-folder.nix
     ./ssh.nix

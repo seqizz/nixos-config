@@ -7,14 +7,7 @@ in
   [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
-    ../aliases.nix
-    ../gitconfig.nix
-    ../overlays.nix
-    ../packages.nix
-    ../neovim.nix
-    ../snapper.nix
-    ../syncthing.nix
-    ../users.nix
+    ../common.nix
 
     ./dnscrypt.nix
     ./fonts.nix
