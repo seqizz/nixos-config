@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+read stuff
+encoded=`echo ${stuff} | base64 -w0`
+if [ -n $TMUX ]; then
+    echo -en "\ePtmux;\e\e]52;c;${encoded}\x07\e\\"
+else
+    echo -en "\x1b]52;c;${encoded}\x07"
+fi
