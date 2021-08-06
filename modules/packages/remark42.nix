@@ -1,4 +1,5 @@
 { stdenv
+, lib
 , fetchurl
 }:
 
@@ -19,7 +20,7 @@ stdenv.mkDerivation rec {
     install -m755 -D remark42.linux-amd64 $out/bin/remark42
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     homepage = https://remark42.com;
     description = "A comment engine";
     platforms = platforms.linux;

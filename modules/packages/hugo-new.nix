@@ -1,4 +1,5 @@
 { stdenv
+, lib
 , fetchurl
 }:
 
@@ -19,7 +20,7 @@ stdenv.mkDerivation rec {
     install -m755 -D hugo $out/bin/hugo
   '';
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     homepage = https://gohugo.io;
     description = "A static site generator";
     platforms = platforms.linux;

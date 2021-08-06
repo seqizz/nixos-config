@@ -1,4 +1,5 @@
 { stdenv
+, lib
 , fetchFromGitHub
 , python3Packages
 }:
@@ -21,7 +22,7 @@ python3Packages.buildPythonPackage rec {
   doInstallCheck = false;
   doCheck = false;
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Awesome swears";
     homepage = https://github.com/seqizz/kufur-generator;
     license = licenses.mit;
