@@ -6,7 +6,7 @@ let
   ) { config = baseconfig; };
 
   # Get sha256 by running nix-prefetch-url --unpack https://github.com/[owner]/[name]/archive/[rev].tar.gz
-  customVimPlugins = with pkgs.vimUtils; {
+  customVimPlugins = with unstable.vimUtils; {
     myNeoSolarized = buildVimPluginFrom2Nix {
       name = "NeoSolarized";
       src  = pkgs.fetchFromGitHub {
@@ -35,7 +35,7 @@ in {
       customRC = ''
         source ~/.config/nvim/nix.vim
       '';
-      packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
+      packages.myVimPackages = with unstable.vimPlugins // customVimPlugins; {
         start = [
           LeaderF
           YouCompleteMe
@@ -44,16 +44,15 @@ in {
           indentLine
           limelight-vim
           myNeoSolarized
-          nerdcommenter
+          nerdcommenter # quick comment
           nvim-web-devicons
-          syntastic
-          tagbar
-          terminus
-          todo-txt-vim
+          syntastic # syntax check
+          tagbar # sidebar
+          terminus # terminal integration
           vim-airline-themes
           vim-easytags
           vim-flake8
-          vim-fugitive
+          vim-fugitive # git helper
           vim-go
           vim-gutentags
           vim-illuminate
