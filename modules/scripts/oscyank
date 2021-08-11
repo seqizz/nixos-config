@@ -1,6 +1,15 @@
-#!/usr/bin/env sh
-read stuff
-encoded=`echo ${stuff} | base64 -w0`
+#!/usr/bin/env bash
+# Grab stdin or any given parameter and stream OSC52
+
+if [ $# -eq 0 ]; then
+    # No argument supplied, use stdin
+    data=$(cat)
+    stuff="`printf '%s\n' "$data"`"
+else
+    stuff="`cat $1`"
+fi
+
+encoded=`echo "${stuff}" | base64 -w0`
 if [ -n $TMUX ]; then
     echo -en "\ePtmux;\e\e]52;c;${encoded}\x07\e\\"
 else
