@@ -22,6 +22,12 @@ rustPlatform.buildRustPackage {
     rust-bin.stable.latest.default
   ];
 
+  preBuildPhases = ["preBuildPhase"];
+  preBuildPhase = ''
+    substituteInPlace src/server.rs \
+    --replace 'env!("CARGO_PKG_HOMEPAGE")' '"https://gurkan.in/"' \
+  '';
+
   doCheck = false;
 
   meta = with lib; {
