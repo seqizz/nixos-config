@@ -2,16 +2,15 @@ self: super:
 {
   myAwesome = super.awesome.overrideAttrs (old: rec {
     pname = "myAwesome";
-    version = "git-20200926-59ff7c";
     src = super.fetchFromGitHub {
-      # owner = "awesomeWM";
-      # repo = "awesome";
-      # rev = "7a759432d3100ff6870e0b2b427e3352bf17c7cc";
-      # sha256 = "0kjndz8q1cagmybsc0cdw97c9ydldahrlv140bfvl1xzhhbmx0hg";
-      owner = "Elv13";
-      repo = "awesome-1";
-      rev = "59ff7c2d3413c5212bac05ea3ca7122f790cfcc7";
-      sha256 = "0pp94gmrmrk74n6i7svairxlfymxbfp1bkav43ihjl9fi9d0jq4p";
+      owner = "awesomeWM";
+      repo = "awesome";
+      rev = "8a81745d4d0466c0d4b346762a80e4f566c83461";
+      sha256 = "031x69nfvg03snkn7392whg3j43ccg46h6fbdcqj3nxqidgkcf76";
+      # owner = "Elv13";
+      # repo = "awesome-1";
+      # rev = "f4301592cc56d37096a96634adbed9afe50e78f7";
+      # sha256 = "1qgpkxxv49ka2pq8jy5yahazd83jxibrqmnw99rb97algq677mv0";
     };
   });
 }

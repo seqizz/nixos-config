@@ -10,7 +10,6 @@
   nixpkgs.overlays = [
     ( import ./overlays-compat/myAwesome.nix )
     ( import ./overlays-compat/myAutorandr.nix )
-    # ( import ./overlays-compat/neovim.nix )
   ];
 
   # Required for wrapped neovim
