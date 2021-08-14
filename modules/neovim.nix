@@ -25,11 +25,20 @@ let
         sha256 = "170ks4lrpyj280pvm2kjndx2q1r7ca4w8ix0zdsgvzrmq54psxad";
       };
     };
+    vim-puppet-4tabs = buildVimPluginFrom2Nix {
+      name = "vim-puppet";
+      src = pkgs.fetchgit {
+        url = "https://git.gurkan.in/gurkan/vim-puppet.git";
+        rev = "f9f38eb3fb9920e93878d6757121a40cb288ce77";
+        sha256 = "1sd1i6z2q864jmrcmq67g7nqdj4v9ys1px5vw8p37qd9vqs3iall";
+      };
+    };
   };
 in {
   programs.neovim = {
     enable = true;
     vimAlias = true;
+    defaultEditor = true;
     package = unstable.neovim-unwrapped;
     configure = {
       customRC = ''
@@ -58,7 +67,7 @@ in {
           vim-illuminate
           vim-nix
           vim-oscyank
-          vim-puppet
+          vim-puppet-4tabs
           # vim-polyglot
           vim-trailing-whitespace
           vimwiki
