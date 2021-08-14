@@ -3,13 +3,13 @@
 
 if [ $# -eq 0 ]; then
     # No argument supplied, use stdin
-    data=$(cat)
-    stuff="`printf '%s\n' "$data"`"
+    data="$(cat)"
+    stuff="`printf '%s' "$data"`"
 else
     stuff="`cat $1`"
 fi
 
-encoded=`echo "${stuff}" | base64 -w0`
+encoded=`echo -n "${stuff}" | base64 -w0`
 if [ -n $TMUX ]; then
     echo -en "\ePtmux;\e\e]52;c;${encoded}\x07\e\\"
 else
