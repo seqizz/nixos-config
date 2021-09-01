@@ -68,7 +68,6 @@ in {
           vim-nix
           vim-oscyank
           vim-puppet-4tabs
-          # vim-polyglot
           vim-trailing-whitespace
           vimwiki
           zenburn
