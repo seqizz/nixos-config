@@ -22,6 +22,14 @@
     printing.enable = true;
     udisks2.enable = true; # automount daemon
 
+    usbguard = {
+      enable = true;
+      IPCAllowedUsers = [
+        "root"
+        "gurkan"
+      ];
+    };
+
     logind.extraConfig = ''
       HandleSuspendKey=ignore
       HandlePowerKey=ignore
