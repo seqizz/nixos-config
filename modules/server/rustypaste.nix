@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, lib, ...}:
 let
   secrets = import ../secrets.nix;
 in
@@ -13,6 +13,8 @@ in
     rustypaste
   ];
 
+  users.users.rustypaste.isSystemUser = true;
+
   # Systemd definitions
   systemd.services.rustypaste = {
     enable = true;
@@ -25,8 +27,7 @@ in
       CONFIG = "/shared/rustypaste/config.toml";
     };
     serviceConfig = {
-      User = "nobody";
-      Group = "nobody";
+      User = "rustypaste";
       ExecStart = "${pkgs.rustypaste}/bin/rustypaste";
       Restart = "always";
       RestartSec = 30;
