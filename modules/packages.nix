@@ -79,7 +79,6 @@
     openssl
     p7zip
     pciutils
-    peco # TUI helper for my ctrl-R visualization
     pkgconfig
     psmisc
     ripgrep # find faster

@@ -55,6 +55,7 @@ in {
           myNeoSolarized
           nerdcommenter # quick comment
           nvim-web-devicons
+          # nvim-ts-rainbow # rainbow paranthesis - build fails / wants ctags
           syntastic # syntax check
           tagbar # sidebar
           terminus # terminal integration
