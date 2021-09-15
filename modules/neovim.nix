@@ -6,23 +6,15 @@ let
   ) { config = baseconfig; };
 
   # Get sha256 by running nix-prefetch-url --unpack https://github.com/[owner]/[name]/archive/[rev].tar.gz
-  customVimPlugins = with unstable.vimUtils; {
-    myNeoSolarized = buildVimPluginFrom2Nix {
-      name = "NeoSolarized";
-      src  = pkgs.fetchFromGitHub {
-        owner  = "malob";
-        repo   = "NeoSolarized";
-        rev    = "a8e6e52";
-        sha256 = "0bxrm2vm3z1y37sm6m2hdn72g2sw31dx1xhmjvd0ng72cnp84d9k";
-      };
-    };
+  # customVimPlugins = with unstable.vimUtils; {
+  customVimPlugins = with pkgs.vimUtils; {
     terminus = buildVimPluginFrom2Nix {
       name = "terminus";
       src  = pkgs.fetchFromGitHub {
         owner  = "wincent";
         repo   = "terminus";
-        rev    = "340ea44d";
-        sha256 = "170ks4lrpyj280pvm2kjndx2q1r7ca4w8ix0zdsgvzrmq54psxad";
+        rev    = "e8bc19c8156d955762c31d0964eeb7c84889f42e";
+        sha256 = "1w4wc6y72mk80ivv55hs8liwa8fnhkyvly8dnny1jhfzs3bbk8kg";
       };
     };
     vim-puppet-4tabs = buildVimPluginFrom2Nix {
@@ -42,9 +34,9 @@ in {
     package = unstable.neovim-unwrapped;
     configure = {
       customRC = ''
-        source ~/.config/nvim/nix.vim
+        source /home/gurkan/.config/nvim/nix.vim
       '';
-      packages.myVimPackages = with unstable.vimPlugins // customVimPlugins; {
+      packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
         start = [
           LeaderF
           YouCompleteMe
@@ -52,7 +44,6 @@ in {
           colorizer
           indentLine
           limelight-vim
-          myNeoSolarized
           nerdcommenter # quick comment
           nvim-web-devicons
           # nvim-ts-rainbow # rainbow paranthesis - build fails / wants ctags
@@ -60,6 +51,7 @@ in {
           tagbar # sidebar
           terminus # terminal integration
           vim-airline-themes
+          vim-colorschemes
           vim-easytags
           vim-flake8
           vim-fugitive # git helper
@@ -71,7 +63,6 @@ in {
           vim-puppet-4tabs
           vim-trailing-whitespace
           vimwiki
-          zenburn
         ];
       };
     };
