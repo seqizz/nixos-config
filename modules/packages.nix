@@ -11,9 +11,12 @@
   };
 
   nixpkgs = {
-      config = {
+    config = {
       enable = true;
       allowUnfree = true;
+      packageOverrides = pkgs: rec {
+        rustypaste-cli = pkgs.callPackage ./packages/rustypaste-cli.nix {};
+      };
     };
     overlays = [
       (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/6d957c2105a5a548211c412fbc97bae81b7b8eb6.tar.gz"))
@@ -82,6 +85,7 @@
     pkgconfig
     psmisc
     ripgrep # find faster
+    rustypaste-cli
     smbclient
     sqlite
     sshfs-fuse
