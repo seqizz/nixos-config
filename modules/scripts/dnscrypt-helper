@@ -1,0 +1,7 @@
+#!/usr/bin/env @bash@/bin/bash
+
+if [[ `@networkmanager@/bin/nmcli c s --active | @grep@/bin/grep VPN` ]]; then
+    exit 0
+else
+    @dnscrypt@/bin/dnscrypt-proxy -config /etc/dnscrypt/config.toml
+fi
