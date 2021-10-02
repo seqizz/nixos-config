@@ -34,7 +34,7 @@ in {
     package = unstable.neovim-unwrapped;
     configure = {
       customRC = ''
-        source /home/gurkan/.config/nvim/nix.vim
+        source ~/.config/nvim/nix.vim
       '';
       packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
         start = [
