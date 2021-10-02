@@ -1,4 +1,18 @@
 { config, pkgs, ...}:
+let
+  writeSubbedBin = (import ../helper-modules/writeSubbedBin.nix {
+    pkgs = pkgs;
+  }).writeSubbedBin;
+  bash = pkgs.bash;
+  dnscrypt = pkgs.dnscrypt-proxy2;
+  grep = pkgs.gnugrep;
+  networkmanager = pkgs.networkmanager;
+  dnscrypt-helper = (writeSubbedBin {
+    name = "dnscrypt-helper";
+    src = ../scripts/dnscrypt-helper;
+    inherit bash grep networkmanager dnscrypt;
+  });
+in
 {
   environment.etc."dnscrypt/config.toml".text = ''
     server_names = ['scaleway-fr', 'quad9-dnscrypt-ip4-nofilter-pri', 'dnscrypt.eu-dk']
@@ -43,10 +57,11 @@
       "graphical-session.target"
     ];
     description = "dnscrypt service";
-    script = "${pkgs.dnscrypt-proxy2}/bin/dnscrypt-proxy -config /etc/dnscrypt/config.toml";
+    # script = "${pkgs.dnscrypt-proxy2}/bin/dnscrypt-proxy -config /etc/dnscrypt/config.toml";
+    script = "${dnscrypt-helper}/bin/dnscrypt-helper";
     serviceConfig = {
       Restart = "always";
-      RestartSec = 5;
+      RestartSec = 30;
       StandardOutput = "syslog";
     };
   };
