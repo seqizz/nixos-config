@@ -38,6 +38,7 @@ in {
       '';
       packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
         start = [
+          # nvim-ts-rainbow # rainbow paranthesis - build fails / wants ctags
           LeaderF
           YouCompleteMe
           airline
@@ -46,7 +47,6 @@ in {
           limelight-vim
           nerdcommenter # quick comment
           nvim-web-devicons
-          # nvim-ts-rainbow # rainbow paranthesis - build fails / wants ctags
           syntastic # syntax check
           tagbar # sidebar
           terminus # terminal integration
@@ -58,6 +58,7 @@ in {
           vim-go
           vim-gutentags
           vim-illuminate
+          vim-markdown
           vim-nix
           vim-oscyank
           vim-puppet-4tabs
