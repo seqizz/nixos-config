@@ -40,8 +40,8 @@ in
       };
     };
     kernelModules = [ "kvm-intel" "i915" ];
-    # kernelPackages = pkgs.linuxPackages_5_12;
-    kernelPackages = pkgs.linuxPackages_5_13;
+    # kernelPackages = pkgs.linuxPackages_5_10;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "i915.enable_fbc=1"
       "i915.enable_guc=2"
