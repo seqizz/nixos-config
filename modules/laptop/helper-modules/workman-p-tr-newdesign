@@ -1,0 +1,64 @@
+// Workman-P-TR Keyboard Layout symbols for xkb on X.Org Server 7.x
+// Based on Workman-P by 09-06-2010 OJ Bucao. https://workmanlayout.org
+// 24-07-2021 Gu:rkan. https://gurkan.in
+
+partial alphanumeric_keys
+xkb_symbols "workman-p-tr" {
+
+    name[Group1]= "Turkish (Workman-P-TR)";
+
+    include "us(basic)"
+
+    // Alphanumeric section
+    key <TLDE> {  [     asciitilde, grave, grave, grave             ] };
+    key <AE01> {  [     1,  exclam                                  ] };
+    key <AE02> {  [     2,  apostrophe                              ] };
+    key <AE03> {  [     3,  asciicircum                             ] };
+    key <AE04> {  [     4,  plus, dollar                            ] };
+    key <AE05> {  [     5,  percent                                 ] };
+    key <AE06> {  [     6,  ampersand                               ] };
+    key <AE07> {  [     7,  slash,  braceleft,  braceleft           ] };
+    key <AE08> {  [     8,  parenleft,  bracketleft,  bracketleft   ] };
+    key <AE09> {  [     9,  parenright,  bracketright, bracketright ] };
+    key <AE10> {  [     0,  equal,  braceright,  braceright         ] };
+
+    key <AD01> {  [   q,  Q,  at                                ] };
+    key <AD02> {  [   d,  D                                     ] };
+    key <AD03> {  [   r,  R                                     ] };
+    key <AD04> {  [   w,  W                                     ] };
+    key <AD05> {  [   b,  B                                     ] };
+    key <AD06> {  [   j,  J                                     ] };
+    key <AD07> {  [   f,  F                                     ] };
+    key <AD08> {  [   u,  U,  udiaeresis,  Udiaeresis           ] };
+    key <AD09> {  [   p,  P                                     ] };
+    key <AD10> {  [   colon,  semicolon                         ] };
+    key <AD11> {  [   asciitilde,  asciitilde,  grave,  grave   ] };
+
+    key <AC01> {  [   a,  A                           ] };
+    key <AC02> {  [   s,  S,  scedilla,  Scedilla     ] };
+    key <AC03> {  [   h,  H                           ] };
+    key <AC04> {  [   t,  T                           ] };
+    key <AC05> {  [   g,  G,  gbreve,  Gbreve         ] };
+    key <AC06> {  [   y,  Y                           ] };
+    key <AC07> {  [   n,  N                           ] };
+    key <AC08> {  [   e,  E                           ] };
+    key <AC09> {  [   o,  O,  odiaeresis,  Odiaeresis ] };
+    key <AC10> {  [   i,  I,  idotless,  Iabovedot    ] };
+    key <AC11> {  [   bar,  backslash                 ] };
+
+    key <AB01> {  [   z,  Z                         ] };
+    key <AB02> {  [   x,  X                         ] };
+    key <AB03> {  [   m,  M                         ] };
+    key <AB04> {  [   c,  C,  ccedilla, Ccedilla    ] };
+    key <AB05> {  [   v,  V                         ] };
+    key <AB06> {  [   k,  K                         ] };
+    key <AB07> {  [   l,  L                         ] };
+    key <AB08> {  [   Up                            ] };
+    key <AB09> {  [   period,  greater              ] };
+    key <AB10> {  [   slash, question               ] };
+    // End alphanumeric section
+
+    key <CAPS> { [    BackSpace,       Escape,       BackSpace,        BackSpace ] };
+
+    include "level3(ralt_switch)"
+};
