@@ -8,8 +8,6 @@
 {
   imports = [ ./helper-modules/clipcat.nix ];
 
-  sound.enable = true;
-
   services = {
     acpid.enable = true;
     fwupd.enable = true;
