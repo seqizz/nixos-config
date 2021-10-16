@@ -62,7 +62,6 @@ in
     serviceConfig = {
       Restart = "always";
       RestartSec = 30;
-      StandardOutput = "syslog";
     };
   };
 
