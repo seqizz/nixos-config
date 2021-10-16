@@ -18,11 +18,6 @@
     };
   };
 
-  environment.etc."udev/helper-scripts/sound-helper.py" = {
-    source = ../scripts/sound-helper.py;
-    mode = "0775";
-  };
-
   services.udev.extraRules = lib.mkMerge [
     # Emit a new DBUS signal, if new sound device added
     ''ACTION=="add",	SUBSYSTEM=="sound", ENV{ID_TYPE}=="audio", RUN+="${pkgs.dbus}/bin/dbus-send --system --type=signal / org.custom.gurkan.sound_device_added"''
