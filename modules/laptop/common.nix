@@ -16,6 +16,7 @@ in
     ./networking.nix
     ./packages.nix
     ./services.nix
+    ./sound.nix
     ./xserver.nix
     ./yubikey.nix
   ];
