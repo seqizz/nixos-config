@@ -17,6 +17,7 @@
 
         # I am just lazy
         new = checkout -b
+        showstash = stash show -p
 
         # checkout latest upstream (good for getting force-pushes)
         getlast = !sh -c 'git fetch --all && git reset --hard origin/$(git symbolic-ref --short HEAD)'
