@@ -33,6 +33,7 @@ in
       noto-fonts
       powerline-fonts
       twemoji-color-font
+      victor-mono
     ];
   };
 }
