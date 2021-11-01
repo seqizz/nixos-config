@@ -9,7 +9,7 @@
     [alias]
         # foksheet: Send the last change amended to last commit quickly
         # except on master branch
-        fs = "!CURBRANCH=$(git symbolic-ref --short HEAD) && if [ \"''${CURBRANCH}\" = \"master\" ]; then echo \"Cant do this on master, master\" && exit 1; fi  && git add -A && git commit -a --amend --no-edit && git push origin +''${CURBRANCH}"
+        fs = "!CURBRANCH=$(git symbolic-ref --short HEAD) && if [ \"''${CURBRANCH}\" = \"master\" ]; then echo \"Cant do this on master, master\" && exit 1; fi  && git add -u && git commit -a --amend --no-edit && git push origin +''${CURBRANCH}"
 
         # Checkout the master branch, update it
         # and remove the source branch if it is already merged on upstream
