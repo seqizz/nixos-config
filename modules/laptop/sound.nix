@@ -1,4 +1,11 @@
 { config, lib, pkgs, ... }:
+let
+  signal_script = pkgs.writeScript "signal_script" ''
+    #!${pkgs.bash}/bin/bash -eu
+    ${pkgs.coreutils}/bin/coreutils --coreutils-prog=sleep 1
+    ${pkgs.dbus}/bin/dbus-send --system --type=signal / "$1"
+  '';
+in
 {
   sound.enable = true;
 
@@ -20,9 +27,8 @@
 
   services.udev.extraRules = lib.mkMerge [
     # Emit a new DBUS signal, if new sound device added
-    ''ACTION=="add",	SUBSYSTEM=="sound", ENV{ID_TYPE}=="audio", RUN+="${pkgs.dbus}/bin/dbus-send --system --type=signal / org.custom.gurkan.sound_device_added"''
-    ''ACTION=="remove",	SUBSYSTEM=="sound", ENV{DEVPATH}=="*/card[0-9]", ENV{ID_TYPE}=="audio", RUN+="${pkgs.dbus}/bin/dbus-send --system --type=signal / org.custom.gurkan.sound_device_removed"''
+    ''ACTION=="add",	SUBSYSTEM=="sound", ENV{ID_TYPE}=="audio", RUN+="${signal_script} org.custom.gurkan.sound_device_added"''
+    ''ACTION=="remove",	SUBSYSTEM=="sound", ENV{DEVPATH}=="*/card[0-9]", ENV{ID_TYPE}=="audio", RUN+="${signal_script} org.custom.gurkan.sound_device_removed"''
   ];
-
 }
 
