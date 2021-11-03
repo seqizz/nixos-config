@@ -1,0 +1,52 @@
+/* No tabs toolbar, I use TST sidebar */
+#TabsToolbar {
+    visibility: collapse !important;
+}
+
+/* Hide sidebar header */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+        display: none;
+}
+/*
+#sidebar-box, #sidebar-box *{ max-width:5em; min-width:50px;}
+#sidebar-box:hover, #sidebar-box:hover *{ max-width:none!important;}
+*/
+
+:root {
+  --sidebar-normal-width: 150px;
+  --sidebar-hover-width: 250px;
+  --background-color: rgb(0,0,0);
+}
+
+/* Expand sidebar if it's hovered for a while */
+#sidebar-box {
+  position: relative !important;
+  overflow-x: hidden !important;
+  min-width: var(--sidebar-normal-width) !important;
+  max-width: var(--sidebar-normal-width) !important;
+  -moz-transition: all .2s ease-out .2s !important;
+}
+
+#sidebar-box:hover {
+  margin-left: calc((var(--sidebar-hover-width) - var(--sidebar-normal-width)) * -1) !important;
+  min-width: var(--sidebar-hover-width) !important;
+  -moz-transition: all .2s ease-out 2s !important;
+}
+
+/* Hide sidebar splitter */
+#sidebar-splitter {
+    display: none !important;
+}
+
+/* Hide sidebar on fullscreen */
+#main-window[inFullscreen] #sidebar-box,
+#main-window[inFullscreen] #sidebar-splitter {
+  display: none !important;
+  width: 0px !important;
+}
+
+/* Close find bar if it loses focus */
+findbar:not(:focus-within) {
+    height: 0px !important;
+    overflow: hidden !important;
+}

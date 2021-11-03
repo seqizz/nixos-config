@@ -1,0 +1,8 @@
+# Switch to a branch with selected commit
+bind main F !@sh -c "git checkout -b `echo -n %(commit) | head -c 10 | sed 's/^/newbranch_/'` %(commit)"
+
+# copy commit id to clipboard
+bind generic c !@sh -c "echo -n %(commit) | xclip -selection c"
+
+# export current diff to a file
+bind main x ?git format-patch -1 -N %(commit)

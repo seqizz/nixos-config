@@ -1,0 +1,3 @@
+keyfile ~/.tarsnap.key
+print-stats
+cachedir ~/.tarsnapcache

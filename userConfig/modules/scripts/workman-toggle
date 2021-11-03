@@ -1,0 +1,13 @@
+#!/usr/bin/env @bash@/bin/bash
+
+current=$(setxkbmap -query | grep layout | awk '{print $2}')
+
+if [[ $1 == "query" ]]; then
+    echo $current
+else
+    if [ $current == 'tr' ];then
+        setxkbmap -layout workman-p-tr -variant ""
+    else
+        setxkbmap -layout tr -variant ""
+    fi
+fi

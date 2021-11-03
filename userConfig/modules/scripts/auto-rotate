@@ -1,0 +1,86 @@
+#!/usr/bin/env @bash@/bin/bash
+# Auto rotate screen based on device orientation
+# Needs iio (monitor-sensor) and inotifytools
+
+LOG=/tmp/rotation_sensor.log
+export DISPLAY=:0
+
+# put your display name here
+DNAME=eDP-1
+
+# may change grep to match your touchscreen
+INDEV=$(@xinput@/bin/xinput --list | @grep@/bin/grep Finger | @sed@/bin/sed 's/.*id=\([0-9]*\).*/\1/')
+
+
+function rotate {
+    #echo ---- rotete ----
+    ORIENTATION=$1
+    CUR_ROT=$(@xrandr@/bin/xrandr -q --verbose | @grep@/bin/grep $DNAME | @coreutils@/bin/coreutils --coreutils-prog=cut -d" " -f6)
+
+    NEW_ROT="normal"
+    CTM="1 0 0 0 1 0 0 0 1"
+
+    # Set the actions to be taken for each possible orientation
+    case "$ORIENTATION" in
+    normal)
+        NEW_ROT="normal"
+        CTM="1 0 0 0 1 0 0 0 1"
+        # gsettings set com.canonical.Unity.Launcher launcher-position Top
+        ;;
+    bottom-up)
+        NEW_ROT="inverted"
+        CTM="-1 0 1 0 -1 1 0 0 1"
+        # gsettings set com.canonical.Unity.Launcher launcher-position Top
+        ;;
+    right-up)
+        CTM="0 1 0 -1 0 1 0 0 1"
+        NEW_ROT="right"
+        # gsettings set com.canonical.Unity.Launcher launcher-position Left
+        ;;
+    left-up)
+        NEW_ROT="left"
+        CTM="0 -1 1 1 0 0 0 0 1"
+        # gsettings set com.canonical.Unity.Launcher launcher-position Left
+        ;;
+    esac
+
+
+    # echo ORIENTATION: $ORIENTATION
+    # echo INDEV:   $INDEV
+    # echo DNAME:   $DNAME
+    # echo DISPLAY: $DISPLAY
+    # echo NEW_ROT: $NEW_ROT
+    # echo CUR_ROT: $CUR_ROT
+    # echo CTM:     $CTM
+    if [ "$NEW_ROT" != "$CUR_ROT" ] ; then
+        @xrandr@/bin/xrandr --output $DNAME --rotate $NEW_ROT
+        @xinput@/bin/xinput set-prop $INDEV 'Coordinate Transformation Matrix' $CTM
+    fi
+
+}
+
+# set default orientation
+# rotate left-up
+
+# kill old monitor-sensor if any
+killall monitor-sensor >> /dev/null 2>&1
+
+# Clear sensor.log at the beginning
+> $LOG
+
+# Launch monitor-sensor and store the output in a variable that can be parsed by the rest of the script
+@iiosensorproxy@/bin/monitor-sensor >> $LOG 2>&1 &
+
+# Parse output or monitor sensor to get the new orientation whenever the log file is updated
+# Possibles are: normal, bottom-up, right-up, left-up
+# Light data will be ignored
+while @inotifytools@/bin/inotifywait -e modify $LOG; do
+    # Read the last line that was added to the file and get the orientation
+    ORIENTATION=$(@grep@/bin/grep 'orientation changed' $LOG | @coreutils@/bin/coreutils --coreutils-prog=tail -n 1 | @awk@/bin/awk '{print $NF}')
+    if [[ $ORIENTATION != "" ]] ; then
+        rotate $ORIENTATION
+        # then wipe the log again
+        > $LOG
+    fi
+done
+'';

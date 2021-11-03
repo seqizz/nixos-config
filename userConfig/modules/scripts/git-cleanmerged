@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git fetch --all && for branch in $(git branch -l | grep -v master); do git branch -d $branch ; done

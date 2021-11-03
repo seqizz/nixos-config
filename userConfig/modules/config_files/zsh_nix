@@ -1,0 +1,11 @@
+# Add yubikey to ssh
+if ! [[ `ssh-add -L | grep nist` ]] && [[ `lsusb | grep "0406 Yubico"` ]]; then
+  if [[ ! -z `pgrep ssh-add` ]]; then
+    echo "(An instance of ssh-add is waiting)"
+  else
+    ssh-add -s /nix/store/9mq39kkc9liymrw5m6idjfvbk017jgqj-opensc-0.21.0/lib/opensc-pkcs11.so
+  fi
+fi
+
+# zap directory with z
+eval "$(zoxide init zsh)"

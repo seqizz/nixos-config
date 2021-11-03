@@ -1,10 +1,5 @@
-{pkgs, ...}:
+{pkgs, inputs, ...}:
 let
-  baseconfig = { allowUnfree = true; };
-  unstable = import (
-    fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
-  ) { config = baseconfig; };
-
   # Get sha256 by running nix-prefetch-url --unpack https://github.com/[owner]/[name]/archive/[rev].tar.gz
   # customVimPlugins = with unstable.vimUtils; {
   customVimPlugins = with pkgs.vimUtils; {
@@ -40,7 +35,7 @@ in {
     enable = true;
     vimAlias = true;
     defaultEditor = true;
-    package = unstable.neovim-unwrapped;
+    package = inputs.nixpkgs_unstable.neovim-unwrapped;
     configure = {
       customRC = ''
         lua require('impatient')

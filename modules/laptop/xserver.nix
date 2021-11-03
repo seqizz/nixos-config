@@ -1,10 +1,4 @@
 { config, pkgs, ... }:
-  # let
-    # baseconfig = { allowUnfree = true; };
-    # unstable = import (
-      # fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
-    # ) { config = baseconfig; };
-  # in
 {
   boot.blacklistedKernelModules = [ "nouveau" ];
 

@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+
+from hashlib import sha256
+from pickle import load, dump
+from socket import gethostname
+from time import time
+
+
+def current_psi_dict():
+    with open('/proc/pressure/cpu', 'r') as psifile:
+        for line in psifile.readlines():
+            if not line.startswith('full'):
+                continue
+
+            total = line.split(' ')[4].split('=')[1]
+            return {
+                'value': int(total),
+                'time': int(time())
+            }
+
+
+def write_current_value(temp_file):
+    current_value = current_psi_dict()
+    with open(temp_file, 'wb') as valuefile:
+        dump(current_value, valuefile)
+
+
+def get_last_value(name):
+    result = False
+    with open(name, 'rb') as valuefile:
+        result = load(valuefile)
+
+    return result
+
+
+def get_filename():
+    hash = sha256(gethostname().encode('utf-8')).hexdigest()[:8]
+    return '/tmp/{}_psi'.format(hash)
+
+
+def get_difference(temp_file):
+    last_value = get_last_value(temp_file)
+    if last_value is False:
+        return "-1"
+    current_value = current_psi_dict()
+    time_difference = current_value['time'] - last_value['time']
+    value_difference = current_value['value'] - last_value['value']
+    if time_difference == 0:
+        # Prevent division by zero, feed last one
+        return current_value['value']
+    return(int(value_difference / time_difference))
+
+
+def main():
+
+    temp_file = get_filename()
+
+    try:
+        print(get_difference(temp_file))
+    except IOError:
+        print('-1')
+    finally:
+        write_current_value(temp_file)
+
+
+main()
+

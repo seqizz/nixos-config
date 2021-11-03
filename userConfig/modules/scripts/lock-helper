@@ -1,0 +1,34 @@
+#!/usr/bin/env @bash@/bin/bash
+action=$1
+
+save_brightness () {
+    @brightnessctl@/bin/brightnessctl g > /tmp/last_brightness
+}
+dim_screen () {
+    DISPLAY=:0 @libnotify@/bin/notify-send -t 2000 "Zzzzz"
+    @brightnessctl@/bin/brightnessctl s 20
+}
+
+restore_brightness () {
+    @brightnessctl@/bin/brightnessctl s `@coreutils@/bin/coreutils --coreutils-prog=cat /tmp/last_brightness`
+}
+
+lock_screen () {
+    /run/wrappers/bin/sudo @slock@/bin/slock
+}
+
+if [[ "$action" == "start" ]]; then
+    # Check if it's already locked and do nothing
+    [[ `@procps@/bin/pidof slock` ]] && exit
+
+    save_brightness
+    dim_screen
+
+elif [[ "$action" == "cancel" ]]; then
+    if test -f "/tmp/last_brightness"; then
+        restore_brightness
+    fi
+
+elif [[ "$action" == "lock" ]]; then
+    lock_screen
+fi

@@ -1,10 +1,4 @@
 { config, lib, pkgs, ... }:
-# let
-  # baseconfig = { allowUnfree = true; allowBroken = true; };
-  # unstable = import (
-    # fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
-  # ) { config = baseconfig; };
-# in
 {
   imports = [ ./helper-modules/clipcat.nix ];
 

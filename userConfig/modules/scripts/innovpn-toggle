@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+if [[ $(nmcli con show --active | grep tun0) ]]; then
+    echo Active, deactivating
+    nmcli con down VPN-aw
+else
+    echo Not active, activating
+    nmcli con up VPN-aw
+fi

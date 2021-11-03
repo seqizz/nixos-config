@@ -1,0 +1,23 @@
+/* Set default namespace to XUL */
+@namespace
+url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Set font size in folder pane */
+#folderTree >treechildren::-moz-tree-cell-text {
+    font-size: 12pt !important;
+}
+
+/* Set font size in thread pane */
+#threadTree >treechildren::-moz-tree-cell-text {
+    font-size: 12pt !important;
+}
+
+/* Set height for cells in folder pane */
+#folderTree >treechildren::-moz-tree-row {
+  height: 25px !important;
+}
+
+/* Set height for cells in thread pane */
+#threadTree >treechildren::-moz-tree-row {
+  height: 25px !important;
+}

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+tarsnap -c --keyfile $HOME/.tarsnap.key --cachedir $HOME/.tarsnapcache -f dotfiles-`date +%Y-%m-%d_%H-%M-%S` $HOME/syncfolder/dotfiles
