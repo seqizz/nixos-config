@@ -8,6 +8,15 @@ let
   # Get sha256 by running nix-prefetch-url --unpack https://github.com/[owner]/[name]/archive/[rev].tar.gz
   # customVimPlugins = with unstable.vimUtils; {
   customVimPlugins = with pkgs.vimUtils; {
+    impatient = buildVimPluginFrom2Nix {
+      name = "impatient";
+      src  = pkgs.fetchFromGitHub {
+        owner  = "lewis6991";
+        repo   = "impatient.nvim";
+        rev    = "f4a45e4be49ce417ef2e15e34861994603e3deab";
+        sha256 = "0q034irf77rlk07fd350zbg73p4daj7bakklk0q0rf3z31npwx8l";
+      };
+    };
     terminus = buildVimPluginFrom2Nix {
       name = "terminus";
       src  = pkgs.fetchFromGitHub {
@@ -34,6 +43,7 @@ in {
     package = unstable.neovim-unwrapped;
     configure = {
       customRC = ''
+        lua require('impatient')
         source ~/.config/nvim/nix.vim
       '';
       packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
@@ -43,6 +53,7 @@ in {
           YouCompleteMe
           airline
           colorizer
+          impatient
           indentLine
           limelight-vim
           nerdcommenter # quick comment
