@@ -11,6 +11,8 @@
   services.xserver = {
     enable = true;
     layout = "tr";
+    xkbVariant = "";
+    # exportConfiguration = true; # Needed for localectl to work properly
 
     windowManager.awesome = {
       enable = true;
