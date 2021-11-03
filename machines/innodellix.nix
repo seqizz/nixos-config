@@ -1,5 +1,8 @@
 { config, lib, pkgs, modulesPath, ... }:
 let
+  unstable = import (
+    fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
+  ) { config = { allowUnfree = true; }; };
   secrets = import ../modules/secrets.nix;
 in
 {
@@ -40,8 +43,8 @@ in
       };
     };
     kernelModules = [ "kvm-intel" "i915" ];
-    # kernelPackages = pkgs.linuxPackages_5_10;
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = unstable.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "i915.enable_fbc=1"
       "i915.enable_guc=2"
