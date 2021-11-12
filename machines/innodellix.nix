@@ -11,19 +11,15 @@ in
     ../modules/laptop/common.nix
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-  };
-
   networking.hostName = "innodellix";
 
   system.stateVersion = "20.09";
 
   boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
     initrd = {
       availableKernelModules = [
         "ahci"
