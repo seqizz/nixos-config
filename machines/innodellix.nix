@@ -89,6 +89,12 @@ in
 
   services = {
     printing.drivers = [ pkgs.hplipWithPlugin ];
+    # xserver = {
+      # videoDrivers = [ "intel" ];
+      # deviceSection = ''
+        # Option "TearFree" "true"
+      # '';
+    # };
   };
 
   environment.etc = {
