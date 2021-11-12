@@ -12,9 +12,12 @@
     ( import ./overlays-compat/myAutorandr.nix )
   ];
 
-  # Required for wrapped neovim
   environment.variables = {
+    # Required for wrapped neovim
     VIMWIKI_MARKDOWN_EXTENSIONS = "toc";
     FZF_BASE = "${pkgs.fzf}/share/fzf";
+
+    # Added for convenience
+    FZF_DEFAULT_OPTS = "--reverse --border --height=60% --color='bg+:#6C71C4'";
   };
 }
