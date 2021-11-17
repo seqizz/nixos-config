@@ -4,6 +4,7 @@ let
     fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
   ) { config = { allowUnfree = true; }; };
   secrets = import ../modules/secrets.nix;
+  owl_plymouth_theme = pkgs.callPackage ../modules/packages/owl.nix {};
 in
 {
   imports =
@@ -19,6 +20,11 @@ in
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
+    };
+    plymouth = {
+      enable = true;
+      theme = "owl";
+      themePackages = [ owl_plymouth_theme ];
     };
     initrd = {
       availableKernelModules = [
