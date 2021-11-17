@@ -14,6 +14,7 @@
 
   environment.variables = {
     # Required for wrapped neovim
+    # VIMWIKI_MARKDOWN_EXTENSIONS = "{\"toc\": {}}";  # On next release
     VIMWIKI_MARKDOWN_EXTENSIONS = "toc";
     FZF_BASE = "${pkgs.fzf}/share/fzf";
 
