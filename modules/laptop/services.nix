@@ -26,8 +26,6 @@
     '';
 
     udev.extraRules = lib.mkMerge [
-      # set kyber as IO scheduler for SSDs
-      ''ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="kyber"''
       # autosuspend USB devices
       ''ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"''
       # autosuspend PCI devices
