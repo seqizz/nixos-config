@@ -45,8 +45,8 @@ in
       };
     };
     kernelModules = [ "kvm-intel" "i915" ];
-    kernelPackages = unstable.linuxPackages_latest;
-    # kernelPackages = pkgs.linuxPackages_zen;
+    # kernelPackages = unstable.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "i915.enable_fbc=1"
       "i915.enable_guc=2"
