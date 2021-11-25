@@ -7,10 +7,10 @@
     # Append our nixpkgs-overlays.
     [ "nixpkgs-overlays=/etc/nixos/modules/overlays-compat/" ]
   ;
-  nixpkgs.overlays = [
-    ( import ./overlays-compat/myAwesome.nix )
-    ( import ./overlays-compat/myAutorandr.nix )
-  ];
+  # nixpkgs.overlays = [
+    # ( import ./overlays-compat/myAwesome.nix )
+    # ( import ./overlays-compat/myAutorandr.nix )
+  # ];
 
   environment.variables = {
     # Required for wrapped neovim
