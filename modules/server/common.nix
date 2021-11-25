@@ -19,6 +19,10 @@
     ./websites.nix  # Just excluded from git, since it's so shit
   ];
 
+  environment.systemPackages = with pkgs; [
+    zoxide  # Not available as an option yet, configured on home-manager separately
+  ];
+
   services.my_snapper = {
     subvolume = "/shared";
   };
