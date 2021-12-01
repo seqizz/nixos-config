@@ -9,7 +9,6 @@
     iw
     linuxPackages.cpupower
     lm_sensors
-    networkmanager-openvpn
     nix-review
     powertop
     ruby # I am not ashamed
