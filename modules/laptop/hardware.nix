@@ -38,6 +38,11 @@
         product = "c52b";
       }
       {
+        # Logitech unifying receiver (kb/mouse combo)
+        vendor = "046d";
+        product = "c534";
+      }
+      {
         # ZSA Moonlander
         vendor = "3297";
         product = "1969";
