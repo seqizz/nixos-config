@@ -12,7 +12,15 @@ in
     ../modules/laptop/common.nix
   ];
 
-  networking.hostName = "innodellix";
+  networking = {
+    hostName = "innodellix";
+    networkmanager = {
+      packages = with pkgs; [
+        networkmanager_openvpn
+      ];
+      enableStrongSwan = true;
+    };
+  };
 
   system.stateVersion = "20.09";
 
