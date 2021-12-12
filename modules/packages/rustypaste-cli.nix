@@ -5,11 +5,11 @@
 
 stdenv.mkDerivation rec {
   name = "rustypaste-cli";
-  version = "0.1.2";
+  version = "0.1.3";
 
   src = fetchurl {
     url = "https://github.com/orhun/rustypaste-cli/releases/download/v${version}/rustypaste-cli-${version}-x86_64-unknown-linux-musl.tar.gz";
-    sha256 = "148zsmywilxk0cwvl81m99ffay54lnmhxnz7kzq6qy2nx7h6yz8y";
+    sha256 = "0h7sj0gqns973kp9srm9s2z5mcyn552pi149jpbzdfagrczhykdl";
   };
 
   unpackPhase = ''

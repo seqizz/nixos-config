@@ -24,13 +24,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    ( python27.withPackages ( ps: with ps; [
-      m2crypto
-      pip
-      pep8
-      setuptools
-      virtualenv
-    ]))
     ( python3.withPackages  ( ps: with ps; [
       setuptools
       pip
@@ -55,7 +48,6 @@
     file
     fzf
     gcc
-    gist
     git
     glibcLocales
     gnumake
