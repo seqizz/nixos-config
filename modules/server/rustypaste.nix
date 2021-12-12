@@ -13,7 +13,10 @@ in
     rustypaste
   ];
 
-  users.users.rustypaste.isSystemUser = true;
+  users.users.rustypaste = {
+    isSystemUser = true;
+    group = "rustypaste";
+  };
 
   # Systemd definitions
   systemd.services.rustypaste = {

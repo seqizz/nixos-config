@@ -6,7 +6,7 @@
   # ) { config = baseconfig; };
 # in
 {
-  imports = [ ./helper-modules/clipcat.nix ];
+  # imports = [ ./helper-modules/clipcat.nix ];
 
   services = {
     acpid.enable = true;

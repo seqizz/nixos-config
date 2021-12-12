@@ -19,7 +19,7 @@ in
       # @Reference to blacklist any devices' auto-switch
       # load-module module-switch-on-connect blacklist=""
       extraConfig = ''
-        load-module module-switch-on-connect blacklist="hdmi|Dock"
+        load-module module-switch-on-connect blacklist="USB|Dock"
         load-module module-alsa-card device_id="1" name="usb-Logitech_Logitech_G933_Gaming_Wireless_Headset-00" card_name="alsa_card.usb-Logitech_Logitech_G933_Gaming_Wireless_Headset-00" namereg_fail=false tsched=yes fixed_latency_range=yes ignore_dB=no deferred_volume=yes use_ucm=yes avoid_resampling=yes card_properties="module-udev-detect.discovered=1" tsched_buffer_size=65536 tsched_buffer_watermark=20000
       '';
     };
