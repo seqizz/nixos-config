@@ -46,46 +46,44 @@ in
         group = cfg.group;
         configDir = cfg.configDir;
         guiAddress = mkIf cfg.enablePublicGui "0.0.0.0:${cfg.guiPort}";
-        declarative = {
-          devices = {
-            innixos = {
-              name = "innixos";
-              id = secrets.syncthingIDinnixos;
-            };
-            siktirin = {
-              name = "siktirin";
-              id = secrets.syncthingIDsiktirin;
-            };
-            rocksteady = {
-              name = "rocksteady";
-              id = secrets.syncthingIDrocksteady;
-            };
-            nixosis = {
-              name = "nixosis";
-              id = secrets.syncthingIDnixosis;
-            };
-            innodellix = {
-              name = "innodellix";
-              id = secrets.syncthingIDinnodellix;
-            };
-            oneplus = {
-              name = "oneplus";
-              id = secrets.syncthingIDoneplus;
-            };
+        devices = {
+          innixos = {
+            name = "innixos";
+            id = secrets.syncthingIDinnixos;
           };
-          folders = {
-            mainrepo = {
-              path = cfg.repoPath;
-              label = "syncfolder";
-              devices = [
-                "nixosis"
-                "oneplus"
-                "rocksteady"
-                "siktirin"
-                "innixos"
-                "innodellix"
-              ];
-            };
+          siktirin = {
+            name = "siktirin";
+            id = secrets.syncthingIDsiktirin;
+          };
+          rocksteady = {
+            name = "rocksteady";
+            id = secrets.syncthingIDrocksteady;
+          };
+          nixosis = {
+            name = "nixosis";
+            id = secrets.syncthingIDnixosis;
+          };
+          innodellix = {
+            name = "innodellix";
+            id = secrets.syncthingIDinnodellix;
+          };
+          oneplus = {
+            name = "oneplus";
+            id = secrets.syncthingIDoneplus;
+          };
+        };
+        folders = {
+          mainrepo = {
+            path = cfg.repoPath;
+            label = "syncfolder";
+            devices = [
+              "nixosis"
+              "oneplus"
+              "rocksteady"
+              "siktirin"
+              "innixos"
+              "innodellix"
+            ];
           };
         };
       };
