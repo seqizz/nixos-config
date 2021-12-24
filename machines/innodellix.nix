@@ -53,8 +53,8 @@ in
       };
     };
     kernelModules = [ "kvm-intel" "i915" ];
-    # kernelPackages = unstable.linuxPackages_latest;
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = unstable.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [
       "i915.enable_fbc=1"
       "i915.enable_guc=2"
@@ -76,6 +76,9 @@ in
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/B74E-E1F3";
       fsType = "vfat";
+      options = [
+        "nofail"
+      ];
     };
 
   swapDevices = [
