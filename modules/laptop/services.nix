@@ -12,9 +12,19 @@
     acpid.enable = true;
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
-    greenclip.enable = true; # clipboard daemon
-    # @Reference to unmark a broken haskell package, wth..
-    # greenclip.package = (with pkgs.haskell.lib; markUnbroken (addExtraLibrary pkgs.haskellPackages.greenclip pkgs.xlibs.libXScrnSaver));
+    greenclip = {
+      enable = true; # clipboard daemon
+      # @Reference to unmark a broken haskell package, wth..
+      # package = (with pkgs.haskell.lib; markUnbroken (addExtraLibrary pkgs.haskellPackages.greenclip pkgs.xlibs.libXScrnSaver));
+      package = pkgs.haskell.lib.overrideCabal pkgs.haskellPackages.greenclip  (oa: {
+        src = pkgs.fetchFromGitHub {
+          owner  = "erebe";
+          repo   = "greenclip";
+          rev    = "ea839d653c076daf0c95a7f491ba9638fcbd050b";
+          sha256 = "1mkwvisr889hznyhp2inhk9yz9hchwg8vv8lgp2yiy6gh6wbz7mj";
+        };
+      });
+    };
     gvfs.enable = true;
     lorri.enable = true;
     printing.enable = true;
