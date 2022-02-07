@@ -5,11 +5,11 @@
 
 stdenv.mkDerivation rec {
   name = "remark42-${version}";
-  version = "1.8.1";
+  version = "1.9.0";
 
   src = fetchurl {
     url = "https://github.com/umputun/remark42/releases/download/v${version}/remark42.linux-amd64.tar.gz";
-    sha256 = "03qg073az1fj0dssrr9jg8h5cy6glw5jmpkvjpawlazrkx7xdfvs";
+    sha256 = "0vbfra85g7w4dj4pfh8jxaimhvw7x9n9y84mkh137vbcfnmpibgz";
   };
 
   unpackPhase = ''
