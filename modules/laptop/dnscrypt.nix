@@ -29,7 +29,6 @@ in
     timeout = 2500
     keepalive = 30
     cert_refresh_delay = 240
-    fallback_resolver = '9.9.9.9:53'
     ignore_system_dns = false
     netprobe_timeout = 30
     log_files_max_size = 10
