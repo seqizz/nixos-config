@@ -19,7 +19,7 @@
       };
     };
     overlays = [
-      (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/6d957c2105a5a548211c412fbc97bae81b7b8eb6.tar.gz"))
+      (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/6d50a4f52d517a53cf740a9746f4e226ac17cf6a.tar.gz"))
     ];
   };
 
