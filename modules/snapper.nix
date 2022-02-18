@@ -23,8 +23,8 @@ in
             TIMELINE_CLEANUP=yes
             TIMELINE_LIMIT_HOURLY=2
             TIMELINE_LIMIT_DAILY=3
-            TIMELINE_LIMIT_WEEKLY=1
-            TIMELINE_LIMIT_MONTHLY=1
+            TIMELINE_LIMIT_WEEKLY=2
+            TIMELINE_LIMIT_MONTHLY=2
             TIMELINE_LIMIT_YEARLY=0
           '';
         };
