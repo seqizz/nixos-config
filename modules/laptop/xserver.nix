@@ -64,4 +64,13 @@
       symbolsFile = ./helper-modules/workman-p-tr;
     };
   };
+
+  # OH GOD WE ARE SO SENSITIVE
+  # Shit's needed to not scroll while middle-clicking
+  environment.etc."libinput/local-overrides.quirks".text = ''
+    [Logitech M705 Marathon Mouse]
+    MatchVendor=0x046D
+    MatchName=Logitech M705
+    AttrEventCodeDisable=REL_WHEEL_HI_RES;
+  '';
 }
