@@ -1,5 +1,12 @@
 { pkgs, config, lib, ... }:
 
+let
+  baseconfig = { allowUnfree = true; };
+# In case I want to use the packages I need on other channels
+  unstable_small = import (
+    fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable-small.tar.gz
+  ) { config = baseconfig; };
+in
 {
   programs = {
     zsh.enable = true;
@@ -90,6 +97,7 @@
     time
     toilet # useless cool stuff
     universal-ctags
+    unstable_small.igrep
     unzip
     usbutils
     vimwiki-markdown
