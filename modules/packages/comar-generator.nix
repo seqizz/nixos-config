@@ -5,12 +5,12 @@
 python3Packages.buildPythonPackage rec {
 
   pname = "comar-generator";
-  version = "1.0.0";
+  version = "unstable-2022-03-22";
 
   src = fetchgit {
     url = "https://git.gurkan.in/gurkan/comar-generator.git";
-    rev = "51dd492";
-    sha256 = "14a9zlrpnh17151bp26s9yjyhdahjifc2r89k4aj4jivmh4p5yhf";
+    rev = "24fe4e455cc9b18e3b583c3e086e3536b564f35a";
+    sha256 = "0jqgdbqyws2i4xdfqks1fll28kd26iyp3gzh7v1jq5zpzqs0qfzd";
   };
 
   propagatedBuildInputs = with python3Packages; [

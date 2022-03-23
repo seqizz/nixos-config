@@ -2,8 +2,11 @@
 let
   baseconfig = { allowUnfree = true; };
   unstable = import (
-    fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
+  fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
   ) { config = baseconfig; };
+  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+    inherit pkgs;
+  };
 
   # Get sha256 by running nix-prefetch-url --unpack https://github.com/[owner]/[name]/archive/[rev].tar.gz
   # customVimPlugins = with unstable.vimUtils; {
@@ -58,6 +61,7 @@ in {
           limelight-vim
           nerdcommenter # quick comment
           nvim-web-devicons
+          nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           syntastic # syntax check
           tagbar # sidebar
           terminus # terminal integration
