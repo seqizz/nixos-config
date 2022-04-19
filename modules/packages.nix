@@ -3,8 +3,8 @@
 let
   baseconfig = { allowUnfree = true; };
 # In case I want to use the packages I need on other channels
-  unstable_small = import (
-    fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable-small.tar.gz
+  unstable = import (
+    fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
   ) { config = baseconfig; };
 in
 {
@@ -26,7 +26,7 @@ in
       };
     };
     overlays = [
-      (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/6d50a4f52d517a53cf740a9746f4e226ac17cf6a.tar.gz"))
+      (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/e45696bedc4a13a5970376b8fc09660fdd0e6f6c.tar.gz"))
     ];
   };
 
@@ -97,7 +97,7 @@ in
     time
     toilet # useless cool stuff
     universal-ctags
-    unstable_small.igrep
+    unstable.igrep
     unzip
     usbutils
     vimwiki-markdown
