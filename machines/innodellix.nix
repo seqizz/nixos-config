@@ -85,6 +85,10 @@ in
     {
       device = "/dev/mapper/vg0-swap";
       size = 8191;
+      options = [
+        "nofail"
+        "x-systemd.device-timeout=2s"
+      ];
     }
   ];
 
