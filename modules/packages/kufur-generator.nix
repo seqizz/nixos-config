@@ -6,12 +6,12 @@
 python3Packages.buildPythonPackage rec {
 
   pname = "kufur-generator";
-  version = "1.0.0";
+  version = "unstable-2021-07-07";
 
   src = fetchFromGitHub {
     owner = "seqizz";
     repo = "kufur-generator";
-    rev = "5a049c6";
+    rev = "5a049c6d1686b09393bbfaa08f3e00f3babbaa95";
     sha256 = "0rcchgrb2562d4hnvsq6mia86l6v8rw8x23l968cmkj79f0ami06";
   };
 
