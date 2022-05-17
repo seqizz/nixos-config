@@ -36,6 +36,8 @@
     '';
 
     udev.extraRules = lib.mkMerge [
+      # try mq-deadline as IO scheduler for NVMe
+      ''ACTION=="add|change", KERNEL=="nvme[0-9]n[0-9]", ATTR{queue/scheduler}="mq-deadline"''
       # autosuspend USB devices
       ''ACTION=="add", SUBSYSTEM=="usb", TEST=="power/control", ATTR{power/control}="auto"''
       # autosuspend PCI devices
