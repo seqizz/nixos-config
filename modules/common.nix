@@ -30,7 +30,7 @@
     kernel.sysctl = {
       "kernel.pty.max" = 24000;
       "kernel.sysrq" = 1;
-      "vm.swappiness" = 10;
+      "vm.swappiness" = 0;
     };
     cleanTmpDir = true;
   };
