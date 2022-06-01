@@ -61,12 +61,13 @@ in
     go
     htop
     iftop
+    inetutils # telnet
     iotop
     ix # pastebin
     jq
     linuxPackages.perf
     lsof
-    manpages
+    man-pages
     mcrypt # for nc file encryption
     moreutils
     mtr
@@ -85,13 +86,11 @@ in
     psmisc
     ripgrep # find faster
     rustypaste-cli
-    smbclient
     sqlite
     sshfs-fuse
     stow # Supercharged symlinks
     sysstat
     tcpdump
-    telnet
     thttpd # for htpasswd
     tig # git helper
     time

@@ -12,7 +12,7 @@
     nix-review
     powertop
     ruby # I am not ashamed
-    smbclient
+    samba
     wirelesstools
   ];
 }
