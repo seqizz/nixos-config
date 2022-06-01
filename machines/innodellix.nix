@@ -15,8 +15,8 @@ in
   networking = {
     hostName = "innodellix";
     networkmanager = {
-      packages = with pkgs; [
-        networkmanager_openvpn
+      plugins = with pkgs; [
+        networkmanager-openvpn
       ];
       enableStrongSwan = true;
     };

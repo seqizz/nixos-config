@@ -12,11 +12,10 @@ in
       comic-relief
       corefonts
       font-awesome_4
-      font-awesome-ttf
+      font-awesome
       ionicons
       liberation_ttf
       lineicons
-      mplus-outline-fonts
       (nerdfonts.override {
         fonts = [
           "Agave"
