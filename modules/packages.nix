@@ -9,7 +9,10 @@ let
 in
 {
   programs = {
-    zsh.enable = true;
+    zsh = {
+        enable = true;
+        enableGlobalCompInit = false;
+    };
     tmux = {
       enable = true;
       terminal = "screen-256color";
@@ -23,6 +26,7 @@ in
       allowUnfree = true;
       packageOverrides = pkgs: rec {
         rustypaste-cli = pkgs.callPackage ./packages/rustypaste-cli.nix {};
+        sheldon = pkgs.callPackage ./packages/sheldon.nix {};
       };
     };
     overlays = [
@@ -86,6 +90,7 @@ in
     psmisc
     ripgrep # find faster
     rustypaste-cli
+    sheldon # zsh plugin manager
     sqlite
     sshfs-fuse
     stow # Supercharged symlinks
