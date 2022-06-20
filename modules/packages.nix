@@ -41,6 +41,7 @@ in
       ipython
       pep8
       virtualenv
+      poetry
     ]))
     bandwhich
     bc
