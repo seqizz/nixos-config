@@ -106,6 +106,7 @@ in
   hardware = {
     video.hidpi.enable = lib.mkDefault true;
     sensor.iio.enable = true;
+    printers.ensurePrinters = secrets.officePrinters;
   };
 
   services = {
@@ -129,3 +130,4 @@ in
     };
   };
 }
+#  vim: set ts=2 sw=2 tw=0 et :
