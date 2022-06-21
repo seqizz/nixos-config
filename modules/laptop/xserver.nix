@@ -46,7 +46,6 @@
       lightdm= {
         enable = true;
         greeter.enable = false;
-        # greeters.enso.enable = true;
       };
     };
 

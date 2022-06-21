@@ -56,7 +56,6 @@ in
       "graphical-session.target"
     ];
     description = "dnscrypt service";
-    # script = "${pkgs.dnscrypt-proxy2}/bin/dnscrypt-proxy -config /etc/dnscrypt/config.toml";
     script = "${dnscrypt-helper}/bin/dnscrypt-helper";
     serviceConfig = {
       Restart = "always";

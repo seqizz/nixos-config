@@ -20,8 +20,8 @@
         src = pkgs.fetchFromGitHub {
           owner  = "erebe";
           repo   = "greenclip";
-          rev    = "ea839d653c076daf0c95a7f491ba9638fcbd050b";
-          sha256 = "1mkwvisr889hznyhp2inhk9yz9hchwg8vv8lgp2yiy6gh6wbz7mj";
+          rev    = "ed3d9d27247f640ef65896346b6e6105f8264e8a";
+          sha256 = "15ndzm58kzwrr39j6ldvm8f53ksn2n7nal2kzl7zsgfssjnmikk4";
         };
       });
     };
@@ -135,5 +135,4 @@
 
   # android settings
   programs.adb.enable = true;
-
 }

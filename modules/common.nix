@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }:
 
-# Common options for all machines
-
+# Common options for all of my machines
 {
   imports =
   [
