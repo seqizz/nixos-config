@@ -47,14 +47,6 @@ in
         configDir = cfg.configDir;
         guiAddress = mkIf cfg.enablePublicGui "0.0.0.0:${cfg.guiPort}";
         devices = {
-          innixos = {
-            name = "innixos";
-            id = secrets.syncthingIDinnixos;
-          };
-          siktirin = {
-            name = "siktirin";
-            id = secrets.syncthingIDsiktirin;
-          };
           rocksteady = {
             name = "rocksteady";
             id = secrets.syncthingIDrocksteady;
@@ -80,8 +72,6 @@ in
               "nixosis"
               "oneplus"
               "rocksteady"
-              "siktirin"
-              "innixos"
               "innodellix"
             ];
           };

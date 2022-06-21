@@ -40,6 +40,7 @@
         { "path" = "${pkgs.pulseaudio}/bin/pactl"; "args" = "load-module module-switch-on-connect blacklist=\"USB|Dock\""; }
       ];
     };
+
     # @Reference: Emit a new DBUS signal, if new sound device added
     # udev.extraRules = lib.mkMerge [
       # ''ACTION=="add",	SUBSYSTEM=="sound", ENV{ID_TYPE}=="audio", RUN+="${signal_script} org.custom.gurkan.sound_device_added"''
@@ -47,3 +48,4 @@
     # ];
   };
 }
+#  vim: set ts=2 sw=2 tw=0 et :
