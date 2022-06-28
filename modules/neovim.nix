@@ -16,8 +16,8 @@ let
       src  = pkgs.fetchFromGitHub {
         owner  = "lewis6991";
         repo   = "impatient.nvim";
-        rev    = "f4a45e4be49ce417ef2e15e34861994603e3deab";
-        sha256 = "0q034irf77rlk07fd350zbg73p4daj7bakklk0q0rf3z31npwx8l";
+        rev    = "969f2c5c90457612c09cf2a13fee1adaa986d350";
+        sha256 = "10nlz4hq1bqjsnj9pkadi3xjj74wn36f2vr66hqp7wm2z7i5zbq3";
       };
     };
     terminus = buildVimPluginFrom2Nix {
@@ -25,8 +25,8 @@ let
       src  = pkgs.fetchFromGitHub {
         owner  = "wincent";
         repo   = "terminus";
-        rev    = "e8bc19c8156d955762c31d0964eeb7c84889f42e";
-        sha256 = "1w4wc6y72mk80ivv55hs8liwa8fnhkyvly8dnny1jhfzs3bbk8kg";
+        rev    = "12b07e390ea6346c91cd82edb0fa9b967164c38d";
+        sha256 = "1s964165x466hjcd3ykfd38jaqh274yygnfw34a66rhgjvhmfzmi";
       };
     };
     vim-puppet-4tabs = buildVimPluginFrom2Nix {
