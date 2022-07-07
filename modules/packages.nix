@@ -44,6 +44,7 @@ in
       poetry
     ]))
     bandwhich
+    bat
     bc
     binutils
     cmake
@@ -106,6 +107,7 @@ in
     unzip
     usbutils
     vimwiki-markdown
+    vgrep
     wget
     youtube-dl
     zip
