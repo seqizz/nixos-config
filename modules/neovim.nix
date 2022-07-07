@@ -11,24 +11,6 @@ let
   # Get sha256 by running nix-prefetch-url --unpack https://github.com/[owner]/[name]/archive/[rev].tar.gz
   # customVimPlugins = with unstable.vimUtils; {
   customVimPlugins = with pkgs.vimUtils; {
-    impatient = buildVimPluginFrom2Nix {
-      name = "impatient";
-      src  = pkgs.fetchFromGitHub {
-        owner  = "lewis6991";
-        repo   = "impatient.nvim";
-        rev    = "969f2c5c90457612c09cf2a13fee1adaa986d350";
-        sha256 = "10nlz4hq1bqjsnj9pkadi3xjj74wn36f2vr66hqp7wm2z7i5zbq3";
-      };
-    };
-    terminus = buildVimPluginFrom2Nix {
-      name = "terminus";
-      src  = pkgs.fetchFromGitHub {
-        owner  = "wincent";
-        repo   = "terminus";
-        rev    = "12b07e390ea6346c91cd82edb0fa9b967164c38d";
-        sha256 = "1s964165x466hjcd3ykfd38jaqh274yygnfw34a66rhgjvhmfzmi";
-      };
-    };
     vim-puppet-4tabs = buildVimPluginFrom2Nix {
       name = "vim-puppet";
       src = pkgs.fetchgit {
@@ -56,20 +38,22 @@ in {
           YouCompleteMe
           airline
           colorizer
-          impatient
+          impatient-nvim
           indentLine
           limelight-vim
           nerdcommenter # quick comment
-          nvim-web-devicons
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
+          nvim-web-devicons
           syntastic # syntax check
           tagbar # sidebar
+          terminus
           terminus # terminal integration
           vim-airline-themes
           vim-colorschemes
           vim-easytags
           vim-flake8
           vim-fugitive # git helper
+          vim-gh-line
           vim-go
           vim-gutentags
           vim-illuminate
@@ -84,3 +68,4 @@ in {
     };
   };
 }
+#  vim: set ts=2 sw=2 tw=0 et :
