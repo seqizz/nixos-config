@@ -21,6 +21,11 @@ let
     };
   };
 in {
+  environment.systemPackages = with pkgs; [
+    fd  # Needed for telescope
+    nodejs  # Needed for CoC
+  ];
+
   programs.neovim = {
     enable = true;
     vimAlias = true;
@@ -34,8 +39,9 @@ in {
       packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
         start = [
           # nvim-ts-rainbow # rainbow paranthesis - build fails / wants ctags
-          LeaderF
-          YouCompleteMe
+          coc-nvim
+          coc-pyright
+          coc-lua
           airline
           colorizer
           impatient-nvim
@@ -43,10 +49,11 @@ in {
           limelight-vim
           nerdcommenter # quick comment
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
-          nvim-web-devicons
+          nvim-treesitter
           syntastic # syntax check
           tagbar # sidebar
-          terminus
+          telescope-nvim
+          telescope-zoxide
           terminus # terminal integration
           vim-airline-themes
           vim-colorschemes
