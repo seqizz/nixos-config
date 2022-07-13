@@ -44,7 +44,6 @@
     opensc
     pcsctools
     pcsclite
-    pinentry_qt5
     # those 2 are only needed for initial setup
     # yubikey-manager
     # yubico-piv-tool
