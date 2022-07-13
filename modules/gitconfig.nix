@@ -39,6 +39,9 @@
           # checkout to branch of given pull request (for github)
           # usage: git pr <source> <PR number> (git pr origin 1010)
           pr = !sh -c 'git fetch $1 pull/$2/head:$2 && git checkout $2' -
+
+          # push to current branch without forcing, for new branches
+          ptb = !sh -c 'git push origin $(git rev-parse --abbrev-ref HEAD)'
     '';
   };
 
