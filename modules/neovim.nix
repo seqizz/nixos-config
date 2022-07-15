@@ -50,7 +50,6 @@ in {
           nerdcommenter # quick comment
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           nvim-treesitter
-          syntastic # syntax check
           tagbar # sidebar
           telescope-nvim
           telescope-zoxide
@@ -58,7 +57,6 @@ in {
           vim-airline-themes
           vim-colorschemes
           vim-easytags
-          vim-flake8
           vim-fugitive # git helper
           vim-gh-line
           vim-go
