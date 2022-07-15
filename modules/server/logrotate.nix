@@ -2,17 +2,15 @@
 {
   services.logrotate = {
     enable = true;
-    paths = {
-      snapper = {
-        path = "/var/log/snapper.log";
-        keep = 20;
-      };
-      nginx = {
-        path = "/var/log/nginx/*.log";
-        keep = 30;
-        user = config.services.nginx.user;
-        group = config.services.nginx.group;
+    settings = {
+      "/var/log/snapper.log" = {
+        rotate = 20;
+        daily = "";
+        notifempty = "";
+        compress = "";
+        missingok = "";
       };
     };
   };
 }
+#  vim: set ts=2 sw=2 tw=0 et :
