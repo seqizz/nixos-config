@@ -34,6 +34,7 @@
     gnupg.agent = {
       enable = true;
       enableBrowserSocket = true;
+      # pinentryFlavor = null;
       # enableSSHSupport = true; # OMG SO SECURE AND SLOW
     };
   };

@@ -14,6 +14,7 @@
   ];
 
   environment.variables = {
+    # TODO: Move all of these to their respective files
     # Required for wrapped neovim
     # VIMWIKI_MARKDOWN_EXTENSIONS = "{\"toc\": {}}";  # On next release
     VIMWIKI_MARKDOWN_EXTENSIONS = "toc";
