@@ -10,6 +10,7 @@
     ./overlays.nix
     ./packages.nix
     ./scripts.nix
+    ./sheldon.nix
     ./snapper.nix
     ./syncthing.nix
     ./users.nix
