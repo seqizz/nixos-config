@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }:
-
+let
+  secrets = import ./secrets.nix;
+in
 # Common options for all of my machines
 {
   imports =
@@ -48,6 +50,7 @@
       keep-outputs = true
       keep-derivations = true
       experimental-features = nix-command flakes
+      access-tokens = github.com=${secrets.githubRateLimitAccessToken}
     '';
   };
 }

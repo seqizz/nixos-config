@@ -121,6 +121,10 @@ in
       mode = "0600";
       text = secrets.awVpnConnectionConf;
     };
+    "NetworkManager/system-connections/VPN-P-aw.nmconnection" = {
+      mode = "0600";
+      text = secrets.awPVpnConnectionConf;
+    };
   };
 }
 #  vim: set ts=2 sw=2 tw=0 et :
