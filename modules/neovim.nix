@@ -24,8 +24,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "timakro";
         repo = "vim-yadi";
-        rev = "d868366707bfc966f856347828607f92bc5cd9fb";
-        sha256 = "0c34y7w31vg2qijprhnd0dakmqasaiflrkh54iv8shn79l7cvhsm";
+        rev = "c4291b94b832ffe0bd7959198fffe7bc540a42a5";
+        sha256 = "1czhfipkhmbms6x5zqqh47dw66icnrnrvlnyqxamp190pydljk4y";
       };
     };
     nvim-transparent = buildVimPluginFrom2Nix {
@@ -37,6 +37,15 @@ let
         sha256 = "0w8ya9fn9gfqbq6dn5wxkl9v6a9i1p8v691a9x65mfm0v7744nd2";
       };
     };
+    yanky = buildVimPluginFrom2Nix {
+      name = "yanky";
+      src = pkgs.fetchFromGitHub {
+        owner = "gbprod";
+        repo = "yanky.nvim";
+        rev = "d55f095b472a3d0355d3b7c5c84d4774ee769a7f";
+        sha256 = "1zj8dvyb2486kpim4vlmrpsyga2hny20q1ya9rmqxfnsahydpmnz";
+      };
+    };
     linediff = buildVimPluginFrom2Nix {
       name = "linediff";
       src = pkgs.fetchFromGitHub {
@@ -44,6 +53,15 @@ let
         repo = "linediff.vim";
         rev = "c7710dbc59881b038ca064b6c54fe482303e8304";
         sha256 = "1qm2fphap3g9lc5kqyhpzqaq21r10bd1c9mlir3rss13i9aqhkl0";
+      };
+    };
+    cutlass = buildVimPluginFrom2Nix {
+      name = "cutlass";
+      src = pkgs.fetchFromGitHub {
+        owner = "svermeulen";
+        repo = "vim-cutlass";
+        rev = "7afd649415541634c8ce317fafbc31cd19d57589";
+        sha256 = "0a4fy5gr32gfkwnqgr3f8sfdh8f32hp23hpvvpgr00irvnmvv5cg";
       };
     };
   };
@@ -65,12 +83,12 @@ in {
       '';
       packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
         start = [
-          # nvim-ts-rainbow # rainbow paranthesis - build fails / wants ctags
           airline
           coc-lua
           coc-nvim
           coc-pyright
           colorizer
+          cutlass
           impatient-nvim
           indent-blankline-nvim-lua
           limelight-vim
@@ -97,6 +115,7 @@ in {
           vim-trailing-whitespace
           vim-yadi
           vimwiki
+          yanky
         ];
       };
     };
