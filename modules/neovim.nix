@@ -42,8 +42,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "d55f095b472a3d0355d3b7c5c84d4774ee769a7f";
-        sha256 = "1zj8dvyb2486kpim4vlmrpsyga2hny20q1ya9rmqxfnsahydpmnz";
+        rev = "2805c5cde03e7bf9d98824fc2d924423b864a7c3";
+        sha256 = "199gzssrbcpbbxhl8chadxhk07y44byvpqx8rjkid7p52i60zl6a";
       };
     };
     linediff = buildVimPluginFrom2Nix {
@@ -51,17 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "AndrewRadev";
         repo = "linediff.vim";
-        rev = "c7710dbc59881b038ca064b6c54fe482303e8304";
-        sha256 = "1qm2fphap3g9lc5kqyhpzqaq21r10bd1c9mlir3rss13i9aqhkl0";
-      };
-    };
-    cutlass = buildVimPluginFrom2Nix {
-      name = "cutlass";
-      src = pkgs.fetchFromGitHub {
-        owner = "svermeulen";
-        repo = "vim-cutlass";
-        rev = "7afd649415541634c8ce317fafbc31cd19d57589";
-        sha256 = "0a4fy5gr32gfkwnqgr3f8sfdh8f32hp23hpvvpgr00irvnmvv5cg";
+        rev = "c627858c6dd280221df032bbe7f3899ec71e1aaa";
+        sha256 = "1sjjmlmzsmi8cpn5a99m1i2lg7zw364ns9r43ncxk4hmpjm5i8am";
       };
     };
   };
@@ -88,7 +79,6 @@ in {
           coc-nvim
           coc-pyright
           colorizer
-          cutlass
           impatient-nvim
           indent-blankline-nvim-lua
           limelight-vim
