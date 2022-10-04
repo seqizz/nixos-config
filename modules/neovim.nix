@@ -42,8 +42,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "2805c5cde03e7bf9d98824fc2d924423b864a7c3";
-        sha256 = "199gzssrbcpbbxhl8chadxhk07y44byvpqx8rjkid7p52i60zl6a";
+        rev = "a75846d25904b3d8f3c2afbbc5ef8ebf1c4c2a74";
+        sha256 = "03s35i1xgwm6rqibyhwy4hqmyzs09nxrfhs5l832n4laqxhbr3nl";
       };
     };
     linediff = buildVimPluginFrom2Nix {
@@ -86,6 +86,8 @@ in {
           nerdcommenter # quick comment
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           nvim-transparent
+          # Try when it doesn't suck with nixos
+          # (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
           tagbar # sidebar
           telescope-nvim
           telescope-zoxide
