@@ -42,8 +42,17 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "a75846d25904b3d8f3c2afbbc5ef8ebf1c4c2a74";
-        sha256 = "03s35i1xgwm6rqibyhwy4hqmyzs09nxrfhs5l832n4laqxhbr3nl";
+        rev = "39bef9fe84af59499cdb88d8e8fb69f3175e1265";
+        sha256 = "051mr4asnb3rzp0p1g6zaxyxmxljzj1v4wgyxx9h04zx0n5j10r8";
+      };
+    };
+    leap = buildVimPluginFrom2Nix {
+      name = "leap";
+      src = pkgs.fetchFromGitHub {
+        owner = "ggandor";
+        repo = "leap.nvim";
+        rev = "2f14458819eb3e37f14fa0f10378c96beff8a6c8";
+        sha256 = "1l3hlq0n8vzhp6cxay11jjq78da081wyqaply5mszw2j44iyh2q8";
       };
     };
     linediff = buildVimPluginFrom2Nix {
@@ -81,6 +90,7 @@ in {
           colorizer
           impatient-nvim
           indent-blankline-nvim-lua
+          leap
           limelight-vim
           linediff
           nerdcommenter # quick comment
