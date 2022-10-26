@@ -8,7 +8,7 @@
     [ "nixpkgs-overlays=/etc/nixos/modules/overlays-compat/" ]
   ;
   nixpkgs.overlays = [
-    ( import ./overlays-compat/myAwesome.nix )
+    # ( import ./overlays-compat/myAwesome.nix )
     # ( import ./overlays-compat/myAutorandr.nix )
     # ( import ./overlays-compat/myGrobi.nix )
   ];

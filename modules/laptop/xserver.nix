@@ -16,7 +16,10 @@
 
     windowManager.awesome = {
       enable = true;
-      package = pkgs.myAwesome;
+      # Not yet, due to https://github.com/awesomeWM/awesome/issues/3182
+      # Also not many changes that I miss compared to release version
+      # package = pkgs.myAwesome;
+
       # Can't work yet: https://discourse.nixos.org/t/awesomewm-luamodules-apparently-not-taking-effect/8507/2
       # luaModules = [
         # pkgs.luaPackages.penlight
