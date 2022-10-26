@@ -19,6 +19,7 @@
       # @Reference
       # appendNameservers = ["127.0.0.1"];
       # insertNameservers = ["51.158.168.202"]; # Public Pi-hole
+      appendNameservers = ["1.1.1.1"]; # Sometimes nothing works
       enable = true;
       wifi.powersave = true;
     };

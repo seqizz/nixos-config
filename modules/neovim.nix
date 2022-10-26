@@ -116,6 +116,7 @@ in {
           vim-puppet-4tabs
           vim-trailing-whitespace
           vim-yadi
+          vim-yaml
           vimwiki
           yanky
         ];
