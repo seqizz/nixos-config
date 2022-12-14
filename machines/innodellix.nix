@@ -82,17 +82,6 @@ in
       ];
     };
 
-  swapDevices = [
-    {
-      device = "/dev/mapper/vg0-swap";
-      size = 8191;
-      options = [
-        "nofail"
-        "x-systemd.device-timeout=2s"
-      ];
-    }
-  ];
-
   powerManagement = {
     cpuFreqGovernor = lib.mkDefault "powersave";
     # Disable hid driver (gyro/accel) while sleeping
