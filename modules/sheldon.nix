@@ -16,7 +16,7 @@ in
       github = "romkatv/zsh-defer"
 
       [templates]
-      defer = { value = 'zsh-defer source "{{ file }}"', each = true }
+      defer = "{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}"
 
       [plugins.zsh-term-title]
       github = 'pawel-slowik/zsh-term-title'
@@ -47,6 +47,7 @@ in
       inline = 'autoload -Uz compinit && compinit'
     '';
   };
-  system.userActivationScripts.sheldonActivate.text = "SHELDON_CONFIG_FILE=${sheldonConfig} ${pkgs.sheldon}/bin/sheldon lock --update";
+  # system.userActivationScripts.sheldonActivate.text = "SHELDON_CONFIG_FILE=${sheldonConfig} ${pkgs.sheldon}/bin/sheldon lock --update";
+  system.userActivationScripts.sheldonActivate.text = "SHELDON_CONFIG_FILE=${sheldonConfig} SHELDON_DATA_DIR=~/.local/share/sheldon ${pkgs.sheldon}/bin/sheldon lock --update";
 }
 #  vim: set ts=2 sw=2 tw=0 et :

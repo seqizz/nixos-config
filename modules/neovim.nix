@@ -42,8 +42,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "39bef9fe84af59499cdb88d8e8fb69f3175e1265";
-        sha256 = "051mr4asnb3rzp0p1g6zaxyxmxljzj1v4wgyxx9h04zx0n5j10r8";
+        rev = "eca407c457ff2c4d04d809045e3f3e9620c1dc2c";
+        sha256 = "1x6i21wbb5p6732wqz5a0blnx9ln7w316m7fk3fcq7xfb12nb5ck";
       };
     };
     leap = buildVimPluginFrom2Nix {
@@ -51,17 +51,17 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "2f14458819eb3e37f14fa0f10378c96beff8a6c8";
-        sha256 = "1l3hlq0n8vzhp6cxay11jjq78da081wyqaply5mszw2j44iyh2q8";
+        rev = "f7391b5fe9771d788816383ee3c75e0be92022af";
+        sha256 = "1xxlpz6y66h8xs8bfl0bq46gkhvdi275vsmrwbac1lwk76v9b8kq";
       };
     };
-    linediff = buildVimPluginFrom2Nix {
-      name = "linediff";
+    commentnvim = buildVimPluginFrom2Nix {
+      name = "commentnvim";
       src = pkgs.fetchFromGitHub {
-        owner = "AndrewRadev";
-        repo = "linediff.vim";
-        rev = "c627858c6dd280221df032bbe7f3899ec71e1aaa";
-        sha256 = "1sjjmlmzsmi8cpn5a99m1i2lg7zw364ns9r43ncxk4hmpjm5i8am";
+        owner = "numToStr";
+        repo = "Comment.nvim";
+        rev = "5f01c1a89adafc52bf34e3bf690f80d9d726715d";
+        sha256 = "0qgb1vx5ipzcgglphhk9wck55hdscx6bdh4lr2y7f7wfxg54r3d6";
       };
     };
   };
@@ -92,8 +92,8 @@ in {
           indent-blankline-nvim-lua
           leap
           limelight-vim
-          linediff
-          nerdcommenter # quick comment
+          commentnvim
+          # nerdcommenter # quick comment // being replaced by comment.nvim
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           nvim-transparent
           # Try when it doesn't suck with nixos
