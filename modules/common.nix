@@ -44,7 +44,8 @@ in
   };
 
   nix = {
-    allowedUsers = [ "@wheel" ];
+    # allowedUsers = [ "@wheel" ];
+    settings.allowed-users = [ "@wheel" ];
     package = pkgs.nixFlakes;
     extraOptions = ''
       keep-outputs = true
