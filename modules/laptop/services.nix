@@ -44,6 +44,8 @@
       ''ACTION=="add", SUBSYSTEM=="pci", TEST=="power/control", ATTR{power/control}="auto"''
       # disable Ethernet Wake-on-LAN
       ''ACTION=="add", SUBSYSTEM=="net", NAME=="enp*", RUN+="${pkgs.ethtool}/sbin/ethtool -s $name wol d"''
+      # ZSA Moonlander
+      ''SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", TAG+="uaccess", TAG+="udev-acl"''
       # @Reference to run a script on AC connect/disconnect
       # ''SUBSYSTEM=="power_supply", ATTR{online}=="0", RUN+="${power_adjust}/bin/power_adjust disconnected"''
       # ''SUBSYSTEM=="power_supply", ATTR{online}=="1", RUN+="${power_adjust}/bin/power_adjust connected"''

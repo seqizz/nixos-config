@@ -63,6 +63,10 @@ in
             name = "oneplus";
             id = secrets.syncthingIDoneplus;
           };
+          oneplusNord = {
+            name = "oneplusNord";
+            id = secrets.syncthingIDoneplusNord;
+          };
         };
         folders = {
           mainrepo = {
@@ -71,6 +75,7 @@ in
             devices = [
               "nixosis"
               "oneplus"
+              "oneplusNord"
               "rocksteady"
               "innodellix"
             ];

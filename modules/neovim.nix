@@ -33,8 +33,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "xiyaowong";
         repo = "nvim-transparent";
-        rev = "1a3d7d3b7670fecbbfddd3fc999ddea5862ac3c2";
-        sha256 = "0w8ya9fn9gfqbq6dn5wxkl9v6a9i1p8v691a9x65mfm0v7744nd2";
+        rev = "6816751e3d595b3209aa475a83b6fbaa3a5ccc98";
+        sha256 = "1v6nnqfr9p2s7f37gvv5wmschf2w65nh9fzk4qghvrxapp9cwlwg";
       };
     };
     yanky = buildVimPluginFrom2Nix {
@@ -42,8 +42,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "eca407c457ff2c4d04d809045e3f3e9620c1dc2c";
-        sha256 = "1x6i21wbb5p6732wqz5a0blnx9ln7w316m7fk3fcq7xfb12nb5ck";
+        rev = "2bb05abe20b5d7af917a48785acfacb602248e36";
+        sha256 = "1zhf7mbrl45hnfdmg26hlvh758cjy5kxn5ygxk7x5b480w0vg45i";
       };
     };
     leap = buildVimPluginFrom2Nix {
@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "f7391b5fe9771d788816383ee3c75e0be92022af";
-        sha256 = "1xxlpz6y66h8xs8bfl0bq46gkhvdi275vsmrwbac1lwk76v9b8kq";
+        rev = "e0145906c5f004b23eb6ec876fad55ffd3382ec9";
+        sha256 = "1qb2rdkmrh3bw7wwkya5ndsn15s5j0hrpr6azknqqgkg8hkgcchc";
       };
     };
     commentnvim = buildVimPluginFrom2Nix {
@@ -60,8 +60,17 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "numToStr";
         repo = "Comment.nvim";
-        rev = "5f01c1a89adafc52bf34e3bf690f80d9d726715d";
-        sha256 = "0qgb1vx5ipzcgglphhk9wck55hdscx6bdh4lr2y7f7wfxg54r3d6";
+        rev = "45dc21a71ad1450606f5e98261badb28db59d74c";
+        sha256 = "05278b42qwm77svl3k2a17vsdlmfjknlwkx01x80na9sciav07mz";
+      };
+    };
+    telescope-file-browser = buildVimPluginFrom2Nix {
+      name = "telescope-file-browser";
+      src = pkgs.fetchFromGitHub {
+        owner = "nvim-telescope";
+        repo = "telescope-file-browser.nvim";
+        rev = "304508fb7bea78e3c0eeddd88c4837501e403ae8";
+        sha256 = "0hyy1fwp06748qy7rs7gf27p7904xfrr53v1sbrmqhlxinlsyp0m";
       };
     };
   };
@@ -100,6 +109,7 @@ in {
           # (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
           tagbar # sidebar
           telescope-nvim
+          telescope-file-browser
           telescope-zoxide
           terminus # terminal integration
           vim-airline-themes

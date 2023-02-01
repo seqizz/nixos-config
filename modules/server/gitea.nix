@@ -5,10 +5,10 @@
     rootUrl = "https://git.gurkan.in";
     appName = "My git forks";
     httpAddress = "127.0.0.1";
-    log.level = "Warn";
     domain = "git.gurkan.in";
-    disableRegistration = true;
     settings = {
+      service.DISABLE_REGISTRATION = true;
+      log.LEVEL= "Warn";
       repository = {
         DEFAULT_REPO_UNITS = "repo.code,repo.releases";
       };

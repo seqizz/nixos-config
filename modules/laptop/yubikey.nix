@@ -31,12 +31,6 @@
       startAgent = true;
       agentPKCS11Whitelist = "/nix/store/*";
     };
-    gnupg.agent = {
-      enable = true;
-      enableBrowserSocket = true;
-      # pinentryFlavor = null;
-      # enableSSHSupport = true; # OMG SO SECURE AND SLOW
-    };
   };
 
   environment.systemPackages = with pkgs; [

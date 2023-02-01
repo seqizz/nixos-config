@@ -47,7 +47,6 @@ in
           "docker"
           "input"
           "networkmanager"
-          "plugdev"
           "vboxusers"
           "video"
           "wheel"

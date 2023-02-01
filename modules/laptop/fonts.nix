@@ -6,7 +6,7 @@ in
 {
   fonts = {
     fontconfig.defaultFonts = {
-      emoji = [ "Twitter Color Emoji" ];
+      emoji = [ "Noto Color Emoji" ];
     };
     fonts = with pkgs; [
       comic-relief

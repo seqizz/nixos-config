@@ -8,8 +8,8 @@ in
 {
   imports = [
     (builtins.fetchTarball {
-      url = "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/nixos-22.05/nixos-mailserver-nixos-22.05.tar.gz";
-      sha256 = "0csx2i8p7gbis0n5aqpm57z5f9cd8n9yabq04bg1h4mkfcf7mpl6";
+      url = "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/nixos-22.11/nixos-mailserver-nixos-22.11.tar.gz";
+      sha256 = "1h1r4x2ffqwyk0ql6kjvcpg1bdiimyzhrsvn49702fsgzpx57fhd";
     })
   ];
 
@@ -25,12 +25,12 @@ in
     certificateDirectory = "/shared/mail/certificates";
     dkimKeyDirectory = "/shared/.mail_dkim_keys";
     certificateScheme = 3;
-    loginAccounts = {
-      "${secrets.mailAccount}" = {
-        hashedPassword = secrets.mailAccountPass;
-      };
-    };
-    extraVirtualAliases = secrets.mailVirtualAliases;
+    loginAccounts = secrets.mailAccount;
+    #   "${secrets.mailAccount}" = {
+    #     hashedPassword = secrets.mailAccountPass;
+    #   };
+    # };
+    # extraVirtualAliases = secrets.mailVirtualAliases;
     enableImap = true;
     enablePop3 = true;
     enableImapSsl = true;
