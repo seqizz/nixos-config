@@ -5,8 +5,14 @@ let
 in
 {
   fonts = {
-    fontconfig.defaultFonts = {
-      emoji = [ "Noto Color Emoji" ];
+    fontconfig= {
+      defaultFonts = {
+        emoji = [ "Noto Color Emoji" ];
+      };
+      antialias = true;
+      cache32Bit = true;
+      hinting.enable = true;
+      hinting.autohint = true;
     };
     fonts = with pkgs; [
       comic-relief
