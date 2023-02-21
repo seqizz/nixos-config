@@ -42,8 +42,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "2bb05abe20b5d7af917a48785acfacb602248e36";
-        sha256 = "1zhf7mbrl45hnfdmg26hlvh758cjy5kxn5ygxk7x5b480w0vg45i";
+        rev = "14b9c4cc572c3be5cf5b0a678e7ac240f08a8681";
+        sha256 = "1mnql64irf4dshfkii5dbfm3l7gigxxzs65knsva8gvfmh9pdzbn";
       };
     };
     leap = buildVimPluginFrom2Nix {
@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "e0145906c5f004b23eb6ec876fad55ffd3382ec9";
-        sha256 = "1qb2rdkmrh3bw7wwkya5ndsn15s5j0hrpr6azknqqgkg8hkgcchc";
+        rev = "1367a095f336c6c7ccda8c6747b57048fc5e008d";
+        sha256 = "1h6q53h6cqbbsqyjs70hkqi7bcra8hbrym6iib6bsh1101w4a8h7";
       };
     };
     commentnvim = buildVimPluginFrom2Nix {
@@ -60,8 +60,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "numToStr";
         repo = "Comment.nvim";
-        rev = "45dc21a71ad1450606f5e98261badb28db59d74c";
-        sha256 = "05278b42qwm77svl3k2a17vsdlmfjknlwkx01x80na9sciav07mz";
+        rev = "418d3117dab2f54c4340ea73e0070dd78fc81753";
+        sha256 = "0qmkj4xchl3q26pzf6x8ssm97ax72vav4jcq4410mf7xiahwcl1d";
       };
     };
     telescope-file-browser = buildVimPluginFrom2Nix {
@@ -69,8 +69,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "nvim-telescope";
         repo = "telescope-file-browser.nvim";
-        rev = "304508fb7bea78e3c0eeddd88c4837501e403ae8";
-        sha256 = "0hyy1fwp06748qy7rs7gf27p7904xfrr53v1sbrmqhlxinlsyp0m";
+        rev = "a18f78121d74c4fae9edd29e138a918a8ede2a70";
+        sha256 = "0x6vgnzh1zd4si95swc47v301c1dyd6say9fkdpnzjl4plzj507f";
       };
     };
   };
