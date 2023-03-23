@@ -33,8 +33,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "xiyaowong";
         repo = "nvim-transparent";
-        rev = "6816751e3d595b3209aa475a83b6fbaa3a5ccc98";
-        sha256 = "1v6nnqfr9p2s7f37gvv5wmschf2w65nh9fzk4qghvrxapp9cwlwg";
+        rev = "b0c869557c962334eb601b9eaee344d1819a3931";
+        sha256 = "1i8sign6qa0ir2rna6najfijfzy7bln37bq7kn8ia3hzrh7gmd21";
       };
     };
     yanky = buildVimPluginFrom2Nix {
@@ -42,8 +42,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "14b9c4cc572c3be5cf5b0a678e7ac240f08a8681";
-        sha256 = "1mnql64irf4dshfkii5dbfm3l7gigxxzs65knsva8gvfmh9pdzbn";
+        rev = "c4c794afd762a00ca543972e5b9e34ce9aa14a87";
+        sha256 = "00nnnp6axlpp8g31g7yi1hzrk9pi6kgh2fm5bgxgl1ynfks45iqi";
       };
     };
     leap = buildVimPluginFrom2Nix {
@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "1367a095f336c6c7ccda8c6747b57048fc5e008d";
-        sha256 = "1h6q53h6cqbbsqyjs70hkqi7bcra8hbrym6iib6bsh1101w4a8h7";
+        rev = "f74473d23ebf60957e0db3ff8172349a82e5a442";
+        sha256 = "1fjc3b4czlndd1nfn5n2zwlx51xhxcxiysjipfhnbbqhpy4sqfbg";
       };
     };
     commentnvim = buildVimPluginFrom2Nix {
@@ -60,8 +60,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "numToStr";
         repo = "Comment.nvim";
-        rev = "418d3117dab2f54c4340ea73e0070dd78fc81753";
-        sha256 = "0qmkj4xchl3q26pzf6x8ssm97ax72vav4jcq4410mf7xiahwcl1d";
+        rev = "8d3aa5c22c2d45e788c7a5fe13ad77368b783c20";
+        sha256 = "0qxzy4dr9cr5q59yi7mw883id51zpb3mnrv6r0aqh9flswkljllr";
       };
     };
     telescope-file-browser = buildVimPluginFrom2Nix {
@@ -69,8 +69,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "nvim-telescope";
         repo = "telescope-file-browser.nvim";
-        rev = "a18f78121d74c4fae9edd29e138a918a8ede2a70";
-        sha256 = "0x6vgnzh1zd4si95swc47v301c1dyd6say9fkdpnzjl4plzj507f";
+        rev = "24389d847f931e3822c5babdd308d20e2e8c638f";
+        sha256 = "1dgd1ipmi17wjpslv7ilqjjjfg9sw2s4ig15simh92h3ipr3bpv3";
       };
     };
   };
