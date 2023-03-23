@@ -95,6 +95,12 @@ in
     '';
   };
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 20;
+    swapDevices = 1;
+  };
+
   hardware = {
     video.hidpi.enable = lib.mkDefault true;
     sensor.iio.enable = true;
