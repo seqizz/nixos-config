@@ -109,7 +109,6 @@ in
 
   services = {
     printing.drivers = [ pkgs.hplipWithPlugin ];
-    autorandr.enable = true;
   };
 
   environment.etc = {
