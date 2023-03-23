@@ -27,8 +27,15 @@
     };
     gvfs.enable = true;
     lorri.enable = true;
-    printing.enable = true;
     udisks2.enable = true; # automount daemon
+
+    printing.enable = true;
+    # Printer discovery
+    avahi = {
+      enable = true;
+      nssmdns = true;
+    };
+    samba.enable = true;
 
     logind.extraConfig = ''
       HandleSuspendKey=ignore
