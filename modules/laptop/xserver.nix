@@ -6,64 +6,73 @@
     # ) { config = baseconfig; };
   # in
 {
+  imports =
+  [
+    ./autorandr.nix
+  ];
+
   boot.blacklistedKernelModules = [ "nouveau" ];
 
-  services.xserver = {
-    enable = true;
-    layout = "tr";
-    xkbVariant = "";
-    # exportConfiguration = true; # Needed for localectl to work properly
-
-    windowManager.awesome = {
+  services = {
+    # autorandr.enable = true;
+    # udev.extraRules = ''ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.autorandr}/bin/autorandr -c"'';
+    xserver = {
       enable = true;
-      # Not yet, due to https://github.com/awesomeWM/awesome/issues/3182
-      # Also not many changes that I miss compared to release version
-      # package = pkgs.myAwesome;
+      layout = "tr";
+      xkbVariant = "";
+      # exportConfiguration = true; # Needed for localectl to work properly
 
-      # Can't work yet: https://discourse.nixos.org/t/awesomewm-luamodules-apparently-not-taking-effect/8507/2
-      # luaModules = [
-        # pkgs.luaPackages.penlight
-        # pkgs.luaPackages.inspect
-      # ];
-    };
-
-    desktopManager = {
-      xterm.enable = false;
-      session = [
-        {
-          name = "HM-awesome";
-          start = ''
-            ${pkgs.runtimeShell} $HOME/.hm-xsession &
-            waitPID=$!
-          '';
-        }
-      ];
-    };
-
-    displayManager = {
-      defaultSession = "HM-awesome";
-      autoLogin = {
+      windowManager.awesome = {
         enable = true;
-        user = "gurkan";
+        # Not yet, due to https://github.com/awesomeWM/awesome/issues/3182
+        # Also not many changes that I miss compared to release version
+        # package = pkgs.myAwesome;
+
+        # Can't work yet: https://discourse.nixos.org/t/awesomewm-luamodules-apparently-not-taking-effect/8507/2
+        # luaModules = [
+          # pkgs.luaPackages.penlight
+          # pkgs.luaPackages.inspect
+        # ];
       };
-      lightdm= {
+
+      desktopManager = {
+        xterm.enable = false;
+        session = [
+          {
+            name = "HM-awesome";
+            start = ''
+              ${pkgs.runtimeShell} $HOME/.hm-xsession &
+              waitPID=$!
+            '';
+          }
+        ];
+      };
+
+      displayManager = {
+        defaultSession = "HM-awesome";
+        autoLogin = {
+          enable = true;
+          user = "gurkan";
+        };
+        lightdm= {
+          enable = true;
+          greeter.enable = false;
+        };
+      };
+
+      libinput = {
         enable = true;
-        greeter.enable = false;
+        touchpad = {
+          disableWhileTyping = true;
+          naturalScrolling = true;
+        };
       };
-    };
 
-    libinput = {
-      enable = true;
-      touchpad = {
-        disableWhileTyping = true;
-        naturalScrolling = true;
+      extraLayouts.workman-p-tr = {
+        description = "My workman turkish mod";
+        languages = [ "eng" ];
+        symbolsFile = ./helper-modules/workman-p-tr;
       };
-    };
-
-    extraLayouts.workman-p-tr = {
-      description = "My workman turkish mod";
-      languages = [ "eng" ];
-      symbolsFile = ./helper-modules/workman-p-tr;
     };
   };
 

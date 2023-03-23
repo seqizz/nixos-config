@@ -1,31 +1,30 @@
-{ lib, fetchFromGitHub }:
+{ lib
+, fetchFromGitHub
+}:
 
 let
-  version = "5.2.3";
-  sha256 = "05s46illx51cbisp38ywsanhrqs68nyyjw1c0ngf1zsqbj16r08f";
+  pname = "ionicons";
+  version = "6.1.3";
 in
-fetchFromGitHub {
-  name = "ionicons-${version}";
-
+fetchFromGitHub rec {
   owner = "ionic-team";
-  repo = "ionicons";
+  repo = pname;
   rev = "v${version}";
 
+  sha256 = "sha256-J7pldfswixYl9qznVFsY37rS2uvGDRpXSV3FUVTeKcY=";
+
+  downloadToTemp = true;
+
   postFetch = ''
-    tar xf $downloadedFile --strip=1
-    install -m444 -Dt $out/share/fonts/truetype docs/fonts/ionicons.ttf
+    cd $out
+    install -Dm644 docs/fonts/ionicons.ttf -t $out/share/fonts/truetype/
   '';
 
-  inherit sha256;
 
   meta = with lib; {
-    description = "Ionicons - TTF Font";
-    longDescription = ''
-      Premium hand-crafted icons built by Ionic
-    '';
-    homepage = "http://ionicons.com/";
+    homepage = "https://ionicons.com";
+    description = "Font from the Ionic mobile framework";
     license = licenses.mit;
     platforms = platforms.all;
-    maintainers = with maintainers; [ seqizz ];
   };
 }

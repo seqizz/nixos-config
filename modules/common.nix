@@ -44,7 +44,6 @@ in
   };
 
   nix = {
-    # allowedUsers = [ "@wheel" ];
     settings.allowed-users = [ "@wheel" ];
     package = pkgs.nixFlakes;
     extraOptions = ''

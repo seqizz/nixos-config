@@ -102,7 +102,6 @@ in {
           leap
           limelight-vim
           commentnvim
-          # nerdcommenter # quick comment // being replaced by comment.nvim
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           nvim-transparent
           # Try when it doesn't suck with nixos
