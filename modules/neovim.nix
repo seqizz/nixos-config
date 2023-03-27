@@ -90,7 +90,7 @@ in {
         lua require('impatient')
         source ~/.config/nvim/nix.vim
       '';
-      packages.myVimPackages = with pkgs.vimPlugins // customVimPlugins; {
+      packages.myVimPackages = with unstable.vimPlugins // customVimPlugins; {
         start = [
           airline
           coc-lua
