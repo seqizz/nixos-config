@@ -73,6 +73,15 @@ let
         sha256 = "1dgd1ipmi17wjpslv7ilqjjjfg9sw2s4ig15simh92h3ipr3bpv3";
       };
     };
+    vim-colorschemes-forked = buildVimPluginFrom2Nix {
+      name = "vim-colorschemes-forked";
+      src = pkgs.fetchFromGitHub {
+        owner = "EvitanRelta";
+        repo = "vim-colorschemes";
+        rev = "9eca7c958e7532203bf899fb94fef44b740d5b5f";
+        sha256 = "1riiyrfi782ddncs3qzx2gvd8qaz50kf6bs9xabafai9qgh2f0n6";
+      };
+    };
   };
 in {
   environment.systemPackages = with pkgs; [
@@ -92,7 +101,7 @@ in {
       '';
       packages.myVimPackages = with unstable.vimPlugins // customVimPlugins; {
         start = [
-          airline
+          lualine-nvim
           coc-lua
           coc-nvim
           coc-pyright
@@ -111,8 +120,7 @@ in {
           telescope-file-browser
           telescope-zoxide
           terminus # terminal integration
-          vim-airline-themes
-          vim-colorschemes
+          vim-colorschemes-forked
           vim-easytags
           vim-fugitive # git helper
           vim-gh-line
