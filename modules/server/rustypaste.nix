@@ -1,18 +1,12 @@
 { config, pkgs, lib, ...}:
 let
   secrets = import ../secrets.nix;
+  baseconfig = { allowUnfree = true; };
+  unstable = import (
+    fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
+  ) { config = baseconfig; };
 in
 {
-  # We need the package
-  nixpkgs.config = {
-    packageOverrides = pkgs: rec {
-      rustypaste = pkgs.callPackage ../../modules/packages/rustypaste.nix {};
-    };
-  };
-  environment.systemPackages = with pkgs; [
-    rustypaste
-  ];
-
   users.users.rustypaste = {
     isSystemUser = true;
     group = "rustypaste";
@@ -31,7 +25,7 @@ in
     };
     serviceConfig = {
       User = "rustypaste";
-      ExecStart = "${pkgs.rustypaste}/bin/rustypaste";
+      ExecStart = "${unstable.rustypaste}/bin/rustypaste";
       Restart = "always";
       RestartSec = 30;
       StandardOutput = "syslog";
