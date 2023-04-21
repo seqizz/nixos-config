@@ -33,8 +33,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "xiyaowong";
         repo = "nvim-transparent";
-        rev = "b0c869557c962334eb601b9eaee344d1819a3931";
-        sha256 = "1i8sign6qa0ir2rna6najfijfzy7bln37bq7kn8ia3hzrh7gmd21";
+        rev = "f09966923f7e329ceda9d90fe0b7e8042b6bdf31";
+        sha256 = "0p1radkyk3ic8dijqmiwny2871dj8kwwnd2rlrwswz1znyzir0k7";
       };
     };
     yanky = buildVimPluginFrom2Nix {
@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "f74473d23ebf60957e0db3ff8172349a82e5a442";
-        sha256 = "1fjc3b4czlndd1nfn5n2zwlx51xhxcxiysjipfhnbbqhpy4sqfbg";
+        rev = "98a72ad93c629c49bd7127d342960cc1b159b620";
+        sha256 = "1zb0k6d57z8pp4nzmqvk041gqhpsswxz642jj8398hf44r05lcq8";
       };
     };
     commentnvim = buildVimPluginFrom2Nix {
@@ -60,8 +60,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "numToStr";
         repo = "Comment.nvim";
-        rev = "8d3aa5c22c2d45e788c7a5fe13ad77368b783c20";
-        sha256 = "0qxzy4dr9cr5q59yi7mw883id51zpb3mnrv6r0aqh9flswkljllr";
+        rev = "a89339ffbee677ab0521a483b6dac7e2e67c907e";
+        sha256 = "0q2882md4c42v255y7pfhqiv1vvi0h76wh4i8n2a00958vkmzg36";
       };
     };
     telescope-file-browser = buildVimPluginFrom2Nix {
@@ -69,8 +69,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "nvim-telescope";
         repo = "telescope-file-browser.nvim";
-        rev = "24389d847f931e3822c5babdd308d20e2e8c638f";
-        sha256 = "1dgd1ipmi17wjpslv7ilqjjjfg9sw2s4ig15simh92h3ipr3bpv3";
+        rev = "e0fcb12702ad0d2873544a31730f9aaef04fd032";
+        sha256 = "1ki1xg2492z620j0kxpjxjlhqjsq5qp6gg8hkjhi57ap4fkad7na";
       };
     };
     vim-colorschemes-forked = buildVimPluginFrom2Nix {
@@ -80,6 +80,15 @@ let
         repo = "vim-colorschemes";
         rev = "9eca7c958e7532203bf899fb94fef44b740d5b5f";
         sha256 = "1riiyrfi782ddncs3qzx2gvd8qaz50kf6bs9xabafai9qgh2f0n6";
+      };
+    };
+    copilot = buildVimPluginFrom2Nix {
+      name = "copliot";
+      src = pkgs.fetchFromGitHub {
+        owner = "github";
+        repo = "copilot.vim";
+        rev = "b6e5624351ba735e25eb8864d7d22819aad00606";
+        sha256 = "1dymnx2jraybrqi2yqa9ycbirw77gvcgfxl5gayi2828yhs543qh";
       };
     };
   };
@@ -106,6 +115,8 @@ in {
           coc-nvim
           coc-pyright
           colorizer
+          context-vim
+          copilot
           impatient-nvim
           indent-blankline-nvim-lua
           leap
@@ -113,6 +124,7 @@ in {
           commentnvim
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           nvim-transparent
+          splitjoin-vim
           # Try when it doesn't suck with nixos
           # (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
           tagbar # sidebar

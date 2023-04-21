@@ -10,7 +10,6 @@ stdenv.mkDerivation rec {
   src = fetchurl {
     url = "https://github.com/rossmacarthur/sheldon/releases/download/${version}/sheldon-${version}-x86_64-unknown-linux-musl.tar.gz";
     sha256 = "sha256-8zNBi7Ziyb+sG108NUMWyZwYNbiHIZOxUmtr+RKSB6Y=";
-    # sha256 = "sha256-wkP+Luq9N68o1DpVmixohrgq0pv7ynKTe/Po5+sgxOg=";
   };
 
   unpackPhase = ''
