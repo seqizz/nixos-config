@@ -41,7 +41,7 @@ in
       ipython
       pep8
       virtualenv
-      poetry
+      poetry-core
     ]))
     bandwhich
     bat

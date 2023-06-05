@@ -26,7 +26,10 @@ in
 
   boot = {
     loader = {
-      systemd-boot.enable = true;
+      systemd-boot = {
+        enable = true;
+        consoleMode = "auto";
+      };
       efi.canTouchEfiVariables = true;
     };
     plymouth = {
@@ -102,7 +105,7 @@ in
   };
 
   hardware = {
-    video.hidpi.enable = lib.mkDefault true;
+    # video.hidpi.enable = lib.mkDefault true;
     sensor.iio.enable = true;
     printers.ensurePrinters = secrets.officePrinters;
   };

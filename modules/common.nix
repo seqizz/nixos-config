@@ -28,13 +28,15 @@ in
   time.timeZone = "Europe/Berlin";
 
   boot = {
-    tmpOnTmpfs = true;
+    tmp = {
+      useTmpfs = true;
+      cleanOnBoot = true;
+    };
     kernel.sysctl = {
       "kernel.pty.max" = 24000;
       "kernel.sysrq" = 1;
       "vm.swappiness" = 0;
     };
-    cleanTmpDir = true;
   };
 
   services = {
@@ -54,3 +56,4 @@ in
     '';
   };
 }
+#  vim: set ts=2 sw=2 tw=0 et :

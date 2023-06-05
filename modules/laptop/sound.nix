@@ -36,9 +36,9 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-      config.pipewire-pulse."context.exec" = [
-        { "path" = "${pkgs.pulseaudio}/bin/pactl"; "args" = "load-module module-switch-on-connect blacklist=\"USB|Dock\""; }
-      ];
+      # config.pipewire-pulse."context.exec" = [
+      #   { "path" = "${pkgs.pulseaudio}/bin/pactl"; "args" = "load-module module-switch-on-connect blacklist=\"USB|Dock\""; }
+      # ];
     };
 
     # @Reference: Emit a new DBUS signal, if new sound device added

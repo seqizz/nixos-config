@@ -17,17 +17,16 @@ in
         snapshotInterval = "hourly";
         cleanupInterval = "2h";
         configs.${escapePath cfg.subvolume} = {
-          subvolume = cfg.subvolume;
-          extraConfig = ''
-            TIMELINE_CREATE=yes
-            TIMELINE_CLEANUP=yes
-            TIMELINE_LIMIT_HOURLY=2
-            TIMELINE_LIMIT_DAILY=3
-            TIMELINE_LIMIT_WEEKLY=2
-            TIMELINE_LIMIT_MONTHLY=2
-            TIMELINE_LIMIT_YEARLY=0
-          '';
+          SUBVOLUME = cfg.subvolume;
+          TIMELINE_CREATE = true;
+          TIMELINE_CLEANUP = true;
+          TIMELINE_LIMIT_HOURLY = 2;
+          TIMELINE_LIMIT_DAILY = 3;
+          TIMELINE_LIMIT_WEEKLY = 2;
+          TIMELINE_LIMIT_MONTHLY = 2;
+          TIMELINE_LIMIT_YEARLY = 0;
         };
       };
     };
 }
+#  vim: set ts=2 sw=2 tw=0 et :
