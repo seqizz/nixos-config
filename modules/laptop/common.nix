@@ -64,7 +64,7 @@ in
     extraModprobeConfig = lib.mkMerge [
       "options snd_hda_intel power_save=1 power_save_controller=Y"
       "options iwlwifi power_save=1 uapsd_disable=1 power_level=5"
-      "options i915 enable_dc=4 enable_fbc=1 enable_guc=2 enable_psr=1 disable_power_well=1"
+      # "options i915 enable_dc=4 enable_fbc=1 enable_guc=2 enable_psr=1 disable_power_well=1"
       "options iwlmvm power_scheme=3"
     ];
     kernelParams = ["intel_pstate=disable"];

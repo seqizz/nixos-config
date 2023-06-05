@@ -56,13 +56,13 @@ in
       };
     };
     kernelModules = [ "kvm-intel" "i915" ];
-    kernelPackages = pkgs.linuxPackages_6_1;
-    # kernelPackages = unstable.linuxPackages_latest;
+    # kernelPackages = pkgs.linuxPackages_6_1;
+    kernelPackages = unstable.linuxPackages_latest;
     kernelParams = [
-      "i915.enable_fbc=1"
-      "i915.enable_guc=2"
+      # "i915.enable_fbc=1"
+      # "i915.enable_guc=2"
       "i915.modeset=1"
-      "i915.mitigations=off"
+      # "i915.mitigations=off"
       "video=eDP-1:1920x1200@60"
       # fking thunderbolt
       "pci=assign-busses,hpbussize=0x33,realloc,hpmemsize=128M"
