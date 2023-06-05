@@ -21,18 +21,12 @@
     options = [ "noatime" ];
   };
 
-  # swapDevices = [
-  #   {
-  #     device = "/swapfile";
-  #     size = 1024;
-  #   }
-  # ];
-
-  zramSwap = {
-    enable = true;
-    memoryPercent = 30;
-    swapDevices = 1;
-  };
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 1024;
+    }
+  ];
 
   system.stateVersion = "20.03";
 }
