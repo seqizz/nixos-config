@@ -120,18 +120,33 @@ in {
           impatient-nvim
           indent-blankline-nvim-lua
           leap
+          trailblazer
           limelight-vim
           commentnvim
           nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           nvim-transparent
           splitjoin-vim
-          # Try when it doesn't suck with nixos
-          # (nvim-treesitter.withPlugins (plugins: pkgs.tree-sitter.allGrammars))
+          # Needed for commentnvim
+          (nvim-treesitter.withPlugins (p: [
+            p.bash
+            p.dockerfile
+            p.go
+            p.json
+            p.lua
+            p.markdown
+            p.nix
+            p.python
+            p.sql
+            p.toml
+            p.vim
+            p.yaml
+          ]))
           tagbar # sidebar
           telescope-nvim
           telescope-file-browser
           telescope-zoxide
           terminus # terminal integration
+          undowarn
           vim-colorschemes-forked
           vim-easytags
           vim-fugitive # git helper

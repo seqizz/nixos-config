@@ -106,9 +106,10 @@ in
     unstable.igrep
     unzip
     usbutils
-    vimwiki-markdown
     vgrep
+    vimwiki-markdown
     wget
+    xkcdpass
     youtube-dl
     zip
     zsh-completions

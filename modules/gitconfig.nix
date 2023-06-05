@@ -6,6 +6,8 @@
       default.nix
       *.swp
       *.pyc
+      flake.lock
+      flake.nix
     '';
     "gitconfig".text = ''
       [init]
