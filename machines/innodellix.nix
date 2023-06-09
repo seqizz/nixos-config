@@ -65,7 +65,7 @@ in
       # "i915.mitigations=off"
       "video=eDP-1:1920x1200@60"
       # fking thunderbolt
-      "pci=assign-busses,hpbussize=0x33,realloc,hpmemsize=128M"
+      # "pci=assign-busses,hpbussize=0x33,realloc,hpmemsize=128M"
     ];
   };
 
