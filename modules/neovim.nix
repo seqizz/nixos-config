@@ -78,8 +78,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "nvim-telescope";
         repo = "telescope-file-browser.nvim";
-        rev = "6cf29d5139601993343c4e70ee2d1f67959d9cc5";
-        sha256 = "1vwwgjzgnsbvpi4jzqbg66cw6v2wv8axwwimfhc79ag5s1g02z8n";
+        rev = "fc70589a93d7bb42f4671ad75c8628a29995bcbe";
+        sha256 = "00advlsr3rbmqrk5cpj8jli29sdi5i2bka2dz0fzsqz5zx3aqvk8";
       };
     };
     vim-colorschemes-forked = buildVimPluginFrom2Nix {
