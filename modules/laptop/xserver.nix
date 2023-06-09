@@ -76,12 +76,20 @@
     };
   };
 
-  # OH GOD WE ARE SO SENSITIVE
-  # Shit's needed to not scroll while middle-clicking
   environment.etc."libinput/local-overrides.quirks".text = ''
+    # DUMB SHIT THIS KEYBOARD IS INTERNAL
+    # So you can disable touchpad while typing on THIS ONE
+    [Serial Keyboards]
+    MatchUdevType=keyboard
+    MatchName=AT Translated Set 2 keyboard
+    AttrKeyboardIntegration=internal
+
+    # OH GOD WE ARE SO SENSITIVE
+    # Shit's needed to not scroll while middle-clicking
     [Logitech M705 Marathon Mouse]
     MatchVendor=0x046D
     MatchName=Logitech M705
-    AttrEventCodeDisable=REL_WHEEL_HI_RES;
+    AttrEventCode=-REL_WHEEL_HI_RES;
   '';
 }
+#  vim: set ts=2 sw=2 tw=0 et :
