@@ -46,6 +46,7 @@ in
           "disk"
           "docker"
           "input"
+          "libvirtd"
           "networkmanager"
           "vboxusers"
           "video"
@@ -69,4 +70,13 @@ in
     ];
     kernelParams = ["intel_pstate=disable"];
   };
+
+  # Libvirt stuff
+  virtualisation.libvirtd = {
+      enable = true;
+      onBoot = "ignore";
+  };
+  programs.dconf.enable = true;
+  environment.systemPackages = with pkgs; [ virt-manager ];
+
 }
