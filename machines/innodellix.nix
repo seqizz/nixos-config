@@ -28,7 +28,7 @@ in
     loader = {
       systemd-boot = {
         enable = true;
-        consoleMode = "auto";
+        consoleMode = "0";
       };
       efi.canTouchEfiVariables = true;
     };
