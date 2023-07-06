@@ -22,5 +22,8 @@
 
     # Added for convenience
     FZF_DEFAULT_OPTS = "--reverse --border --height=60% --color='bg+:#6C71C4'";
+
+    # Workaround for wezterm issue: https://github.com/wez/wezterm/issues/3610
+    XKB_DEFAULT_LAYOUT = "tr";
   };
 }

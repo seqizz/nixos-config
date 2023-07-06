@@ -47,9 +47,21 @@
     '';
   };
 
+  # Fun tip: If you add an executable like git-x to your path, you can
+  # call it with `git x`.
   environment.systemPackages = with pkgs; [
     (pkgs.writeScriptBin "git-cleanmerged" ''
       git fetch --all && for branch in $(git branch -l | grep -v master); do git branch -d $branch ; done
+    '')
+    # Gitlab MR push, restrictive but works on basic level
+    (pkgs.writeScriptBin "git-gmr" ''
+        #!/usr/bin/env sh
+        if [[ -z $1 ]]
+        then
+            echo give an assignee name please
+            exit 1
+        fi
+        git push -o merge_request.create -o merge_request.target=master -o merge_request.remove_source_branch -o merge_request.assign="$1" origin $(git symbolic-ref --short HEAD)
     '')
   ];
 }

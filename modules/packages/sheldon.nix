@@ -5,11 +5,11 @@
 
 stdenv.mkDerivation rec {
   name = "sheldon";
-  version = "0.7.1";
+  version = "0.7.3";
 
   src = fetchurl {
-    url = "https://github.com/rossmacarthur/sheldon/releases/download/${version}/sheldon-${version}-x86_64-unknown-linux-musl.tar.gz";
-    sha256 = "sha256-8zNBi7Ziyb+sG108NUMWyZwYNbiHIZOxUmtr+RKSB6Y=";
+    url = "https://github.com/rossmacarthur/sheldon/releases/download/0.7.3/sheldon-0.7.3-x86_64-unknown-linux-musl.tar.gz";
+    sha256 = "06spb45553s2rqjdsivzskf64076yabs6axis7gxjwxlpzalaz8h";
   };
 
   unpackPhase = ''

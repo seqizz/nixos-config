@@ -22,6 +22,15 @@
       appendNameservers = ["1.1.1.1"]; # Sometimes nothing works
       enable = true;
       wifi.powersave = true;
+      # Randomize mac address on connections
+      extraConfig = ''
+      [device]
+      wifi.scan-rand-mac-address=yes
+
+      [connection]
+      wifi.cloned-mac-address=random
+      ethernet.cloned-mac-address=random
+      '';
     };
 
     # @Reference
@@ -30,3 +39,4 @@
     # '';
   };
 }
+#  vim: set ts=2 sw=2 tw=0 et :
