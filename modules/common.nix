@@ -46,7 +46,10 @@ in
   };
 
   nix = {
-    settings.allowed-users = [ "@wheel" ];
+    settings = {
+      allowed-users = [ "@wheel" ];
+      auto-optimise-store = true;
+    };
     package = pkgs.nixFlakes;
     extraOptions = ''
       keep-outputs = true

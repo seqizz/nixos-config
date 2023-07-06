@@ -8,8 +8,8 @@ in
 {
   imports = [
     (builtins.fetchTarball {
-      url = "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/nixos-22.11/nixos-mailserver-nixos-22.11.tar.gz";
-      sha256 = "1h1r4x2ffqwyk0ql6kjvcpg1bdiimyzhrsvn49702fsgzpx57fhd";
+      url = "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/nixos-23.05/nixos-mailserver-nixos-23.05.tar.gz";
+      sha256 = "1ngil2shzkf61qxiqw11awyl81cr7ks2kv3r3k243zz7v2xakm5c";
     })
   ];
 
@@ -24,7 +24,7 @@ in
     mailDirectory = "/shared/mail";
     certificateDirectory = "/shared/mail/certificates";
     dkimKeyDirectory = "/shared/.mail_dkim_keys";
-    certificateScheme = 3;
+    certificateScheme = "acme-nginx";
     loginAccounts = secrets.mailAccount;
     #   "${secrets.mailAccount}" = {
     #     hashedPassword = secrets.mailAccountPass;
