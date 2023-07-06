@@ -10,6 +10,7 @@ in
   imports =
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ../modules/laptop/common.nix
+    ../modules/laptop/vpnconfig.nix  # Only imported here
   ];
 
   networking = {
@@ -112,21 +113,6 @@ in
 
   services = {
     printing.drivers = [ pkgs.hplipWithPlugin ];
-  };
-
-  environment.etc = {
-    "NetworkManager/system-connections/VPN-af.nmconnection" = {
-      mode = "0600";
-      text = secrets.afVpnConnectionConf;
-    };
-    "NetworkManager/system-connections/VPN-aw.nmconnection" = {
-      mode = "0600";
-      text = secrets.awVpnConnectionConf;
-    };
-    "NetworkManager/system-connections/VPN-P-aw.nmconnection" = {
-      mode = "0600";
-      text = secrets.awPVpnConnectionConf;
-    };
   };
 }
 #  vim: set ts=2 sw=2 tw=0 et :
