@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "8facf2eb6a378fd7691dce8c8a7b2726823e2408";
-        sha256 = "185zil8r41dz981qjmj241zri5iswfafqsx9racvsg87gcvysggn";
+        rev = "bae0433949ba54eb1df629f6e94b33af5922922f";
+        sha256 = "1csxnckbwcrliy1098hgzmpqkan36hxw33a0hwl2x5s6xqcbwc9a";
       };
     };
     trailblazer = buildVimPluginFrom2Nix {

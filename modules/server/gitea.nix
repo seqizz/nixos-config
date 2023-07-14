@@ -24,6 +24,7 @@ in
       };
       ui = {
         SHOW_USER_EMAIL = false;
+        DEFAULT_THEME = "arc-green";
       };
       "ui.meta" = {
           DESCRIPTION = "This is where I fork my stuff";
