@@ -9,7 +9,7 @@ in
 {
   users.users.rustypaste = {
     isSystemUser = true;
-    group = "rustypaste";
+    group = "nogroup";
   };
 
   # Systemd definitions
