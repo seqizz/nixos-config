@@ -60,8 +60,8 @@ in
     };
   };
 
-  # Powersave
   boot = {
+    # Powersave
     extraModprobeConfig = lib.mkMerge [
       "options snd_hda_intel power_save=1 power_save_controller=Y"
       "options iwlwifi power_save=1 uapsd_disable=1 power_level=5"
@@ -69,6 +69,10 @@ in
       "options iwlmvm power_scheme=3"
     ];
     kernelParams = ["intel_pstate=disable"];
+    # I have more than enough memory here
+    kernel.sysctl = {
+      "vm.swappiness" = 0;
+    };
   };
 
   # Libvirt stuff

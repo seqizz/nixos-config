@@ -23,6 +23,11 @@
     zoxide  # Not available as an option yet, configured on home-manager separately
   ];
 
+  boot.kernel.sysctl = {
+    # I don't have time-critical stuff, but generally low on memory
+    "vm.swappiness" = 50;
+  };
+
   services.my_snapper = {
     subvolume = "/shared";
   };

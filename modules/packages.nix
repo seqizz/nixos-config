@@ -55,6 +55,7 @@ in
     direnv # .envrc runner
     dmidecode
     dnsutils
+    docker-compose
     dstat
     du-dust # better du alternative
     ffmpeg

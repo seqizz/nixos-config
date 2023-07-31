@@ -44,6 +44,8 @@
 
           # push to current branch without forcing, for new branches
           ptb = !sh -c 'git push origin $(git rev-parse --abbrev-ref HEAD)'
+      [safe]
+          directory = /shared/syncfolder/dotfiles/nixos/etc/nixos
     '';
   };
 
