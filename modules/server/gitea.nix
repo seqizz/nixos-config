@@ -10,6 +10,10 @@ in
     enable = true;
     package = unstable.gitea;
     appName = "My git forks";
+    extraConfig = ''
+      [DEFAULT]
+      WORK_PATH=/var/lib/gitea
+    '';
     settings = {
       service.DISABLE_REGISTRATION = true;
       log.LEVEL= "Warn";
