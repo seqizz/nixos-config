@@ -33,8 +33,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "xiyaowong";
         repo = "nvim-transparent";
-        rev = "f6a0f8387fbea5fbc2b78137444a9de4fdd02459";
-        sha256 = "1qqd193mlgwrvdwhmcccwpr731a9z974k738wbx173lp7ln28k2z";
+        rev = "3af6232c8d39d51062702e875ff6407c1eeb0391";
+        sha256 = "17imywr9kxprw5c0d9c0vfxkbn06asacr2y3ka7x1d22f309z76l";
       };
     };
     yanky = buildVimPluginFrom2Nix {
@@ -42,8 +42,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "b12561386a25645adb7504e0e6a8c5dc8b31e6da";
-        sha256 = "0s2ssd1rg6bblbq50p2yx9vzip4vra4rsy6rsjkxlagw4y6qx4ss";
+        rev = "c1211c6c6d983a72c74dde44df8575a64d50562f";
+        sha256 = "1n0mgvc7kvg6ciw8m8lgy6bkbl75m95y4fq11y6yb6byiqpraimg";
       };
     };
     leap = buildVimPluginFrom2Nix {
@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "bae0433949ba54eb1df629f6e94b33af5922922f";
-        sha256 = "1csxnckbwcrliy1098hgzmpqkan36hxw33a0hwl2x5s6xqcbwc9a";
+        rev = "5efe985cf68fac3b6a6dfe7a75fbfaca8db2af9c";
+        sha256 = "093fzf1bki2ll3lrqbnrw9w7i7aajbma4zq83c2nkxwi5gj5jqgl";
       };
     };
     trailblazer = buildVimPluginFrom2Nix {
@@ -69,8 +69,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "numToStr";
         repo = "Comment.nvim";
-        rev = "176e85eeb63f1a5970d6b88f1725039d85ca0055";
-        sha256 = "0y3zhv82hi8avxhmp1c9h0r17kfclwxphzyk7701f6wjky375ksw";
+        rev = "0236521ea582747b58869cb72f70ccfa967d2e89";
+        sha256 = "1mvi7c6n9ybgs6lfylzhkidifa6jkgsbj808knx57blvi5k7blgr";
       };
     };
     telescope-file-browser = buildVimPluginFrom2Nix {
@@ -78,8 +78,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "nvim-telescope";
         repo = "telescope-file-browser.nvim";
-        rev = "e03ff55962417b69c85ef41424079bb0580546ba";
-        sha256 = "1agwrhwb6w0qpcgcmffibnip61g6dqjzmchngb1a9fwxqvzrgfll";
+        rev = "6e51d0cd6447cf2525412220ff0a2885eef9039c";
+        sha256 = "1ksx2w2vaxnjyvj937la3fsiw7z0ary5qjnylxspw0zqp6d2ri9q";
       };
     };
     vim-colorschemes-forked = buildVimPluginFrom2Nix {
@@ -96,8 +96,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "github";
         repo = "copilot.vim";
-        rev = "a4a6d6b3f9e284e7f5c849619e06cd228cad8abd";
-        sha256 = "1ychdiz76xrhras9fynzf5sb5cragv8lxyv3gpmjy8grb8znwyzq";
+        rev = "998cf5ab1b85e844c7e8edb864a997e590df7182";
+        sha256 = "1sf566vwyj21h9vbs64j8458v4ncqpmfb5cr74pyl59qi33yq1zd";
       };
     };
     undowarn = buildVimPluginFrom2Nix {

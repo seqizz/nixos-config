@@ -8,10 +8,10 @@ self: super:
       patchShebangs /build/source/tests/examples/_postprocess.lua
     '';
     src = super.fetchFromGitHub {
-      owner = "awesomeWM";
+      owner = "BarbUK";
       repo = "awesome";
-      rev = "b54e50ad6cfdcd864a21970b31378f7c64adf3f4";
-      sha256 = "1cd1jirhndss583agxrapq9wf6q7m27gv95wdmx4bbzrykac4df8";
+      rev = "5daae2bb5d90117eb341ad72eb123c4e6804b780";
+      sha256 = "sha256-o69if8HQw2u0fp5J7jkS4WQeAXVuiFwpDLzGFscP4mM=";
     };
     lua = super.lua5_3;
   });

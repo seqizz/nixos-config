@@ -24,14 +24,15 @@ in
     config = {
       enable = true;
       allowUnfree = true;
-      packageOverrides = pkgs: rec {
-        rustypaste-cli = pkgs.callPackage ./packages/rustypaste-cli.nix {};
-        sheldon = pkgs.callPackage ./packages/sheldon.nix {};
-      };
+      # @Reference
+      # packageOverrides = pkgs: rec {
+        # rustypaste-cli = pkgs.callPackage ./packages/rustypaste-cli.nix {};
+        # sheldon = pkgs.callPackage ./packages/sheldon.nix {};
+      # };
     };
-    overlays = [
-        (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/08b06ab2046bce2c3b5f53ec599a6550ab9a9485.tar.gz"))
-    ];
+    # overlays = [
+        # (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/598b2f04ed252eb5808b108d7a10084c0c548753.tar.gz"))
+    # ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -43,6 +44,10 @@ in
       virtualenv
       poetry-core
     ]))
+    # unstable is better for some packages
+    unstable.rustypaste-cli
+    unstable.sheldon # zsh plugin manager
+
     bandwhich
     bat
     bc
@@ -92,8 +97,6 @@ in
     pkgconfig
     psmisc
     ripgrep # find faster
-    rustypaste-cli
-    sheldon # zsh plugin manager
     sqlite
     sshfs-fuse
     stow # Supercharged symlinks
