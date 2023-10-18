@@ -2,12 +2,12 @@
 {
   imports = [
     ./helper-modules/usb-wakeup-disable.nix
-    # ./helper-modules/v4l2loopback.nix
+    ./helper-modules/v4l2loopback.nix
   ];
 
   hardware = {
     bluetooth.enable = true;
-    # v4l2loopback.enable = true;
+    v4l2loopback.enable = true;
     logitech.wireless.enable = true;
     keyboard.zsa.enable = true;
     enableRedistributableFirmware = true;
@@ -23,6 +23,8 @@
         vaapiVdpau
         libvdpau-va-gl
         intel-media-driver
+        vulkan-loader
+        libva
       ];
     };
 

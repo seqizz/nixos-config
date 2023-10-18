@@ -6,6 +6,7 @@ in
 {
   fonts = {
     fontconfig= {
+      enable = true;
       defaultFonts = {
         emoji = [ "Noto Color Emoji" ];
       };
@@ -14,6 +15,7 @@ in
       hinting.enable = true;
       hinting.autohint = true;
     };
+    fontDir.enable = true;
     fonts = with pkgs; [
       comic-relief
       corefonts
