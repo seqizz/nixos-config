@@ -6,13 +6,13 @@
 python3Packages.buildPythonPackage rec {
 
   pname = "kufur-generator";
-  version = "unstable-2023-09-20";
+  version = "unstable-2023-11-25";
 
   src = fetchFromGitHub {
     owner = "seqizz";
     repo = "kufur-generator";
-    rev = "328004e2af4f178d0ae61cdee8af035585348a8c";
-    sha256 = "1wp44n0a2whf4qg2dcc1ycpzlb9i560ikr8ka4q80r8pd7wg6ph3";
+    rev = "71af1be8a5831623cbe0591bd8349e41117ca501";
+    sha256 = "0jg80zcv6g1y0v6gmkazv6iyb4zcb0q2p43n101h1yy3fbahihkn";
   };
 
   propagatedBuildInputs = with python3Packages; [

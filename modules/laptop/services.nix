@@ -82,6 +82,9 @@
         "INTEL_GPU_MAX_FREQ_ON_BAT" = 400;
         "INTEL_GPU_BOOST_FREQ_ON_AC" = 1100;
         "INTEL_GPU_BOOST_FREQ_ON_BAT" = 500;
+        # Battery Care
+        "START_CHARGE_THRESH_BAT0" = 75;
+        "STOP_CHARGE_THRESH_BAT0" = 80;
       };
     };
 

@@ -26,11 +26,6 @@ in
     dkimKeyDirectory = "/shared/.mail_dkim_keys";
     certificateScheme = "acme-nginx";
     loginAccounts = secrets.mailAccount;
-    #   "${secrets.mailAccount}" = {
-    #     hashedPassword = secrets.mailAccountPass;
-    #   };
-    # };
-    # extraVirtualAliases = secrets.mailVirtualAliases;
     enableImap = true;
     enablePop3 = true;
     enableImapSsl = true;
@@ -42,7 +37,8 @@ in
     policydSPFExtraConfig = ''
       Reject_Not_Pass_Domains = live.com,aol.com,hotmail.com,gmail.com,yahoo.com
     '';
-	mailboxes = {
+    rejectRecipients = secrets.mailRejectRecipients;
+    mailboxes = {
       Trash = {
         auto = "no";
         specialUse = "Trash";
