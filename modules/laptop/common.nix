@@ -23,6 +23,7 @@ in
 
   console = {
     keyMap = "trq";
+    earlySetup = true;
     # Good for HiDPI on TTY
     font = "latarcyrheb-sun32";
   };

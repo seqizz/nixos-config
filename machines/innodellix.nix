@@ -39,6 +39,7 @@ in
       themePackages = [ nixos_plymouth ];
     };
     initrd = {
+      systemd.enable = true;
       availableKernelModules = [
         "ahci"
         "battery"
@@ -60,13 +61,18 @@ in
     # kernelPackages = pkgs.linuxPackages_6_1;
     kernelPackages = unstable.linuxPackages_latest;
     kernelParams = [
-      # "i915.enable_fbc=1"
-      # "i915.enable_guc=2"
+      # prevent the kernel from blanking plymouth out of the fb
+      "fbcon=nodefer"
+      # disable boot logo if any
+      "logo.nologo"
+      # tell the kernel to not be verbose
+      "quiet"
+      # disable systemd status messages
+      "rd.systemd.show_status=auto"
+      # lower the udev log level to show only errors or worse
+      "rd.udev.log_level=3"
       "i915.modeset=1"
-      # "i915.mitigations=off"
       "video=eDP-1:1920x1200@60"
-      # fking thunderbolt
-      # "pci=assign-busses,hpbussize=0x33,realloc,hpmemsize=128M"
     ];
   };
 
