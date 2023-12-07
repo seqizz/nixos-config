@@ -56,7 +56,13 @@ in
     compsize # btrfs compression calculator
     cpulimit
     cryptsetup
-    curl
+    (curl.override {
+      http3Support = true;
+      idnSupport = true;
+      brotliSupport = true;
+      openssl = pkgs.quictls;
+      zstdSupport = true;
+    })
     direnv # .envrc runner
     dmidecode
     dnsutils
