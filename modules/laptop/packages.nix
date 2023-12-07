@@ -9,7 +9,6 @@
     iw
     linuxPackages.cpupower
     lm_sensors
-    nix-review
     powertop
     ruby # I am not ashamed
     samba

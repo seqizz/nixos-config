@@ -95,8 +95,10 @@
     my_syncthing = {
       user = "gurkan";
       group = "gurkan";
-      configDir = "/home/gurkan/.syncthing-config";
+      configDir = "/home/gurkan/.config/syncthing";
       repoPath = "/home/gurkan/syncfolder";
+      # Folder for syncthing's DB
+      dataDir = "/home/gurkan/.local/share/syncthing";
     };
   };
 

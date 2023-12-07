@@ -11,7 +11,7 @@ let
   # Get sha256 by running nix-prefetch-url --unpack https://github.com/[owner]/[name]/archive/[rev].tar.gz
   # customVimPlugins = with unstable.vimUtils; {
   customVimPlugins = with pkgs.vimUtils; {
-    vim-puppet-4tabs = buildVimPluginFrom2Nix {
+    vim-puppet-4tabs = buildVimPlugin {
       name = "vim-puppet";
       src = pkgs.fetchgit {
         url = "https://git.gurkan.in/gurkan/vim-puppet.git";
@@ -19,7 +19,7 @@ let
         sha256 = "1sd1i6z2q864jmrcmq67g7nqdj4v9ys1px5vw8p37qd9vqs3iall";
       };
     };
-    vim-yadi = buildVimPluginFrom2Nix {
+    vim-yadi = buildVimPlugin {
       name = "vim-yadi";
       src = pkgs.fetchFromGitHub {
         owner = "timakro";
@@ -28,7 +28,7 @@ let
         sha256 = "1czhfipkhmbms6x5zqqh47dw66icnrnrvlnyqxamp190pydljk4y";
       };
     };
-    nvim-transparent = buildVimPluginFrom2Nix {
+    nvim-transparent = buildVimPlugin {
       name = "nvim-transparent";
       src = pkgs.fetchFromGitHub {
         owner = "xiyaowong";
@@ -37,25 +37,25 @@ let
         sha256 = "0a9rckkz95a0szgykwxb6qanriszr4c34zkac0bvvwkldapbngy1";
       };
     };
-    yanky = buildVimPluginFrom2Nix {
+    yanky = buildVimPlugin {
       name = "yanky";
       src = pkgs.fetchFromGitHub {
         owner = "gbprod";
         repo = "yanky.nvim";
-        rev = "5ba331de8a8d18e1ec345d26e865bc3a0db2e8be";
-        sha256 = "0zv322rybvky8qkzrrbc2nsrh6rfq7awnwlh9ydkkpkm63nphzl8";
+        rev = "6bb9ffd3cad4c9876bda54e19d0659de28a4f84f";
+        sha256 = "01pd9xgw9wh9xa4sk80g0n61ra4l9xvssqak6vv03kgrpyb1qizw";
       };
     };
-    leap = buildVimPluginFrom2Nix {
+    leap = buildVimPlugin {
       name = "leap";
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "b6ae80f8fc9993638608fc1a51c6ab0eeb12618c";
-        sha256 = "19nffffmczlqfsgjs10hqs9abgbygiv0ns64apk7gzf5anjaj0z1";
+        rev = "501b461f7930a4bd35b5f0ef2857c1e42cfb26e8";
+        sha256 = "0msiqv661f47rkgm42k9q56g9arh8iihr4s0b46mgv3k5g08ksd1";
       };
     };
-    trailblazer = buildVimPluginFrom2Nix {
+    trailblazer = buildVimPlugin {
       name = "trailblazer";
       src = pkgs.fetchFromGitHub {
         owner = "LeonHeidelbach";
@@ -64,7 +64,7 @@ let
         sha256 = "1lh29saxl3dmpjq0lnrrhgqs052wpgjcq7qfxydv5686nnch5bzn";
       };
     };
-    commentnvim = buildVimPluginFrom2Nix {
+    commentnvim = buildVimPlugin {
       name = "commentnvim";
       src = pkgs.fetchFromGitHub {
         owner = "numToStr";
@@ -73,16 +73,16 @@ let
         sha256 = "1mvi7c6n9ybgs6lfylzhkidifa6jkgsbj808knx57blvi5k7blgr";
       };
     };
-    telescope-file-browser = buildVimPluginFrom2Nix {
+    telescope-file-browser = buildVimPlugin {
       name = "telescope-file-browser";
       src = pkgs.fetchFromGitHub {
         owner = "nvim-telescope";
         repo = "telescope-file-browser.nvim";
-        rev = "f41675fddb1ea9003187d07ecc627a8bf8292633";
-        sha256 = "05qvb1fsnby5c5x5my601lavbk3m9w10dnq6i55yp42ksrk8zjki";
+        rev = "8e0543365fe5781c9babea7db89ef06bcff3716d";
+        sha256 = "1rpgn2050sjxw4555m32a9bmapx8i0xkmy4p200712nnh6xg9z11";
       };
     };
-    vim-colorschemes-forked = buildVimPluginFrom2Nix {
+    vim-colorschemes-forked = buildVimPlugin {
       name = "vim-colorschemes-forked";
       src = pkgs.fetchFromGitHub {
         owner = "EvitanRelta";
@@ -91,7 +91,7 @@ let
         sha256 = "1riiyrfi782ddncs3qzx2gvd8qaz50kf6bs9xabafai9qgh2f0n6";
       };
     };
-    copilot = buildVimPluginFrom2Nix {
+    copilot = buildVimPlugin {
       name = "copliot";
       src = pkgs.fetchFromGitHub {
         owner = "github";
@@ -100,7 +100,7 @@ let
         sha256 = "0icjjxgmi1v8jsidvh3lhnn04nkqpgfgr83mg2qa9603f1a34fqw";
       };
     };
-    undowarn = buildVimPluginFrom2Nix {
+    undowarn = buildVimPlugin {
       name = "undowarn";
       src = pkgs.fetchFromGitHub {
         owner = "arp242";
@@ -123,27 +123,25 @@ in {
     package = unstable.neovim-unwrapped;
     configure = {
       customRC = ''
-        lua require('impatient')
         source ~/.config/nvim/nix.vim
       '';
       packages.myVimPackages = with unstable.vimPlugins // customVimPlugins; {
         start = [
-          lualine-nvim
+          lualine-nvim # Statusline
           coc-lua
           coc-nvim
           coc-pyright
-          colorizer
-          context-vim
-          copilot
-          impatient-nvim
-          indent-blankline-nvim-lua
-          leap
-          trailblazer
-          limelight-vim
+          colorizer # Colorize hex codes
+          context-vim # Keep the context on top
+          copilot # well, shit works
+          # impatient-nvim
+          indent-blankline-nvim-lua # Visible indent lines
+          leap # Better movement with s
+          trailblazer # Better mark jumps Ctrl-S and Shift-Up/Down
+          limelight-vim # Focus helper
           commentnvim
-          nur.repos.m15a.vimExtraPlugins.pretty-fold-nvim
           nvim-transparent
-          splitjoin-vim
+          splitjoin-vim # Better split/join with gS/gJ
           # Needed for commentnvim
           (nvim-treesitter.withPlugins (p: [
             p.bash
@@ -164,14 +162,14 @@ in {
           telescope-file-browser
           telescope-zoxide
           terminus # terminal integration
-          undowarn
+          undowarn # warn for over-undo
           vim-colorschemes-forked
           vim-easytags
           vim-fugitive # git helper
           vim-gh-line
           vim-go
           vim-gutentags
-          vim-illuminate
+          vim-illuminate # highlight word under cursor everywhere
           vim-markdown
           vim-nix
           vim-oscyank

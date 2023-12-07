@@ -16,7 +16,7 @@ in
       hinting.autohint = true;
     };
     fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       comic-relief
       corefonts
       font-awesome_4

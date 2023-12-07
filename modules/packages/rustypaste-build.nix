@@ -3,7 +3,7 @@
 , makeRustPlatform
 , lib
 , fetchFromGitHub
-, pkgconfig
+, pkg-config
 , rust-bin  # Comes from https://github.com/oxalica/rust-overlay
 }:
 rustPlatform.buildRustPackage {
@@ -18,7 +18,7 @@ rustPlatform.buildRustPackage {
   cargoSha256 = "1fp9ihny1jzsrjgywjbnajj36nmm3v40j110d39wavy6cqjk2rp7";
 
   nativeBuildInputs = [
-    pkgconfig
+    pkg-config
     rust-bin.stable.latest.default
   ];
 

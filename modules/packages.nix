@@ -94,7 +94,7 @@ in
     openssl
     p7zip
     pciutils
-    pkgconfig
+    pkg-config
     psmisc
     ripgrep # find faster
     sqlite
