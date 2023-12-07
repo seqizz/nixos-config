@@ -29,7 +29,7 @@
 
           # I am just lazy
           new = checkout -b
-          showstash = stash show -p
+          stashshow = stash show -p
 
           # checkout latest upstream (good for getting force-pushes)
           getlast = !sh -c 'git fetch --all && git reset --hard origin/$(git symbolic-ref --short HEAD)'
@@ -44,6 +44,10 @@
 
           # push to current branch without forcing, for new branches
           ptb = !sh -c 'git push origin $(git rev-parse --abbrev-ref HEAD)'
+
+          # stash the whole thing, including untracked files, requires comment
+          stashfull = stash --include-untracked -m
+
       [safe]
           directory = /shared/syncfolder/dotfiles/nixos/etc/nixos
     '';
