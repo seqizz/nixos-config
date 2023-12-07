@@ -20,8 +20,8 @@
         src = pkgs.fetchFromGitHub {
           owner  = "erebe";
           repo   = "greenclip";
-          rev    = "59ed674a93181ccd24be697d2e68a13954352ae7";
-          sha256 = "14f4hgrchpd83bzs0yjdngn9glnx55yc7y5mggrxyb24k69k86wb";
+          rev    = "b98bb1d3487cc192a5771579d21674ca9480a9b3";
+          sha256 = "1jkx0i3a92190chz5ddy7g0afnzjn6d87wxk0ssxmsqji79mdiyj";
         };
       });
     };

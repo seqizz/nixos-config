@@ -10,8 +10,8 @@ self: super:
     src = super.fetchFromGitHub {
       owner = "awesomewm";
       repo = "awesome";
-      rev = "7ed4dd620bc73ba87a1f88e6f126aed348f94458";
-      sha256 = "0qz21z3idimw1hlmr23ffl0iwr7128wywjcygss6phyhq5zn5bx3";
+      rev = "375d9d723550023f75ff0066122aba99fdbb2a93";
+      sha256 = "0ycis7519d7znyaa2x9dxgs0asfr4w7xsb34lcifygnlwnz11hpm";
     };
     lua = super.lua5_3;
   });
