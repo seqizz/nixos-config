@@ -19,6 +19,7 @@ in
       log.LEVEL= "Warn";
       repository = {
         DEFAULT_REPO_UNITS = "repo.code,repo.releases";
+        DEFAULT_BRANCH = "master";
       };
       server = {
         ROOT_URL = "https://git.gurkan.in";
