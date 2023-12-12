@@ -8,6 +8,9 @@
 {
   # imports = [ ./helper-modules/clipcat.nix ];
 
+  # Lorri is a daemon which can write stuff, workaround
+  systemd.user.services.lorri.serviceConfig.ProtectHome = lib.mkForce false;
+
   services = {
     acpid.enable = true;
     fwupd.enable = true;
