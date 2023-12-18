@@ -4,7 +4,7 @@ let
   secrets = import ../../secrets.nix;
 in
 {
-  systemd.services.comar-bot= {
+  systemd.services.comar-bot = {
     enable = true;
     wantedBy = [
       "multi-user.target"

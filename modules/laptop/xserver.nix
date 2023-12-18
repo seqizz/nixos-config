@@ -8,14 +8,12 @@
 {
   imports =
   [
-    ./autorandr.nix
+    ./loose.nix
   ];
 
   boot.blacklistedKernelModules = [ "nouveau" ];
 
   services = {
-    # autorandr.enable = true;
-    # udev.extraRules = ''ACTION=="change", SUBSYSTEM=="drm", RUN+="${pkgs.autorandr}/bin/autorandr -c"'';
     xserver = {
       enable = true;
       layout = "tr";

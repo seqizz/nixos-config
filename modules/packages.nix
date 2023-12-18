@@ -25,10 +25,10 @@ in
       enable = true;
       allowUnfree = true;
       # @Reference
-      # packageOverrides = pkgs: rec {
-        # rustypaste-cli = pkgs.callPackage ./packages/rustypaste-cli.nix {};
+      packageOverrides = pkgs: rec {
+        loose = pkgs.python3Packages.callPackage ./packages/loose.nix {};
         # sheldon = pkgs.callPackage ./packages/sheldon.nix {};
-      # };
+      };
     };
     # overlays = [
         # (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/598b2f04ed252eb5808b108d7a10084c0c548753.tar.gz"))
