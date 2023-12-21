@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "501b461f7930a4bd35b5f0ef2857c1e42cfb26e8";
-        sha256 = "0msiqv661f47rkgm42k9q56g9arh8iihr4s0b46mgv3k5g08ksd1";
+        rev = "b20691cc8824826571e5298d1402730bb9c721d2";
+        sha256 = "03l8q22j5gc2xhpfzdyiskj082kriijwf5rw3ngcyb43i6v23n23";
       };
     };
     trailblazer = buildVimPlugin {
@@ -96,8 +96,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "github";
         repo = "copilot.vim";
-        rev = "2c31989063b145830d5f0bea8ab529d2aef2427b";
-        sha256 = "0icjjxgmi1v8jsidvh3lhnn04nkqpgfgr83mg2qa9603f1a34fqw";
+        rev = "5b19fb001d7f31c4c7c5556d7a97b243bd29f45f";
+        sha256 = "0m6s01in8bkfviq7p0xq9x5ldgj826ixbnz4586bgg9pzkr0lz4q";
       };
     };
     undowarn = buildVimPlugin {
