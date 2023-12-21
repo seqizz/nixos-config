@@ -1,6 +1,7 @@
 { lib
 , fetchgit
 , pkgs
+, installShellFiles
 , python3Packages
 }:
 let
@@ -17,31 +18,40 @@ in
 python3Packages.buildPythonApplication rec {
 
   pname = "loose";
-  version = "unstable-2023-12-17";
+  version = "unstable-2023-12-21";
   pyproject = true;
 
   src = fetchgit {
     url = "https://git.gurkan.in/gurkan/loose.git";
-    rev = "ee2c1b9f0bd5cd7f117a542091368b118b5ca06f";
-    sha256 = "0azvnfk1qd1kxjph9d8di2ffp0fi7phrrimgn5rlj4vzngxpqrws";
+    rev = "59a76f91be0458ee2989886f37163fb131ff56c7";
+    sha256 = "0pvb5qaqliyslyz4gck0i8jd86bz4631zrnj2p96iqhjd2rjjxk4";
   };
 
   nativeBuildInputs = with python3Packages; [
     poetry-core
+    installShellFiles
+  ];
+
+  buildInputs = with python3Packages; [
+    shtab # For command line completion
   ];
 
   propagatedBuildInputs = with python3Packages; [
     latest-jc
     pyyaml
-    pykwalify
+    yamale
     xdg-base-dirs
     pkgs.xorg.xrandr
     pyedid
-    pkgs.xorg.xrdb  # Helps for setting dpi
+    pkgs.xorg.xrdb  # Helps for setting dpi etc
   ];
 
-  doInstallCheck = false;
-  doCheck = false;
+  # Sadly shtab doesn't have fish completion yet
+  postInstall = ''
+    installShellCompletion --cmd loose \
+      --bash <($out/bin/loose -s bash) \
+      --zsh <($out/bin/loose -s zsh)
+  '';
 
   meta = with lib; {
     description = "Another xrandr wrapper for multi-monitor setups";
