@@ -43,7 +43,6 @@ python3Packages.buildPythonApplication rec {
     xdg-base-dirs
     pkgs.xorg.xrandr
     pyedid
-    pkgs.xorg.xrdb  # Helps for setting dpi etc
   ];
 
   # Sadly shtab doesn't have fish completion yet
