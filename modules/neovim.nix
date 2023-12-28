@@ -173,6 +173,7 @@ in {
           vim-markdown
           vim-nix
           vim-oscyank
+          indent-o-matic
           vim-puppet-4tabs
           vim-trailing-whitespace
           vim-yadi
