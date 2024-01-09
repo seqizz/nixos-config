@@ -28,6 +28,14 @@ in
       packageOverrides = pkgs: rec {
         loose = pkgs.python3Packages.callPackage ./packages/loose.nix {};
         # sheldon = pkgs.callPackage ./packages/sheldon.nix {};
+        vimwiki-markdown = pkgs.vimwiki-markdown.overrideAttrs (old: {
+          version = "0.4.1";
+          src = pkgs.python3Packages.fetchPypi {
+            version = "0.4.1";
+            pname = "vimwiki-markdown";
+            sha256 = "sha256-hJl0OTE6kHucVGOxgOZBG0noYRfxma3yZSrUWEssLN4=";
+          };
+        });
       };
     };
     # overlays = [

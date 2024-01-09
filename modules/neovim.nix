@@ -51,8 +51,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "ggandor";
         repo = "leap.nvim";
-        rev = "b20691cc8824826571e5298d1402730bb9c721d2";
-        sha256 = "03l8q22j5gc2xhpfzdyiskj082kriijwf5rw3ngcyb43i6v23n23";
+        rev = "b63f14d7474002573710d10f02f1af33a4910490";
+        sha256 = "0v0p5yb2v6mcyn62id2m8n6hr20hni3w88mjdwm4ca8r7r46sz1n";
       };
     };
     trailblazer = buildVimPlugin {
@@ -78,8 +78,8 @@ let
       src = pkgs.fetchFromGitHub {
         owner = "nvim-telescope";
         repo = "telescope-file-browser.nvim";
-        rev = "8e0543365fe5781c9babea7db89ef06bcff3716d";
-        sha256 = "1rpgn2050sjxw4555m32a9bmapx8i0xkmy4p200712nnh6xg9z11";
+        rev = "4bd5657b14b58e069287f5ac591a647bb860b2ed";
+        sha256 = "0j0y9i2vh1fs4wzf692a9wxnavb42x8amwb6kh25c226h8s13a4n";
       };
     };
     vim-colorschemes-forked = buildVimPlugin {
@@ -133,8 +133,8 @@ in {
           coc-pyright
           colorizer # Colorize hex codes
           context-vim # Keep the context on top
+          conform-nvim # Autoformat for various languages
           copilot # well, shit works
-          # impatient-nvim
           indent-blankline-nvim-lua # Visible indent lines
           leap # Better movement with s
           trailblazer # Better mark jumps Ctrl-S and Shift-Up/Down
@@ -167,7 +167,6 @@ in {
           vim-easytags
           vim-fugitive # git helper
           vim-gh-line
-          vim-go
           vim-gutentags
           vim-illuminate # highlight word under cursor everywhere
           vim-markdown
