@@ -49,6 +49,11 @@
         vendor = "3297";
         product = "1969";
       }
+      {
+        # Keychron V3
+        vendor = "3434";
+        product = "0333";
+      }
     ];
   };
 }
