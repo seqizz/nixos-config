@@ -1,17 +1,19 @@
-{ pkgs, config, lib, ... }:
-
-let
-  baseconfig = { allowUnfree = true; };
-# In case I want to use the packages I need on other channels
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}: let
+  baseconfig = {allowUnfree = true;};
+  # In case I want to use the packages I need on other channels
   unstable = import (
     fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
-  ) { config = baseconfig; };
-in
-{
+  ) {config = baseconfig;};
+in {
   programs = {
     zsh = {
-        enable = true;
-        enableGlobalCompInit = false;
+      enable = true;
+      enableGlobalCompInit = false;
     };
     tmux = {
       enable = true;
@@ -38,23 +40,26 @@ in
         });
       };
     };
+    # Enable if you'd like to get latest rust (with newer commit hash)
     # overlays = [
-        # (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/598b2f04ed252eb5808b108d7a10084c0c548753.tar.gz"))
+    # (import (builtins.fetchTarball "https://github.com/oxalica/rust-overlay/archive/598b2f04ed252eb5808b108d7a10084c0c548753.tar.gz"))
     # ];
   };
 
   environment.systemPackages = with pkgs; [
-    ( python3.withPackages  ( ps: with ps; [
-      setuptools
-      pip
-      ipython
-      pep8
-      virtualenv
-      poetry-core
-    ]))
+    (python3.withPackages (ps:
+      with ps; [
+        setuptools
+        pip
+        ipython
+        pep8
+        virtualenv
+        poetry-core
+      ]))
     # unstable is better for some packages
     unstable.rustypaste-cli
     unstable.sheldon # zsh plugin manager
+    unstable.igrep
 
     bandwhich
     bat
@@ -121,7 +126,6 @@ in
     time
     toilet # useless cool stuff
     universal-ctags
-    unstable.igrep
     unzip
     usbutils
     vgrep

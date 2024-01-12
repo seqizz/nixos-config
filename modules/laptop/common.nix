@@ -1,10 +1,12 @@
-{ config, lib, pkgs, ... }:
-let
-  secrets = import ../secrets.nix;
-in
 {
-  imports =
-  [
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  secrets = import ../secrets.nix;
+in {
+  imports = [
     <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
 
     ../common.nix
@@ -78,11 +80,10 @@ in
 
   # Libvirt stuff
   virtualisation.libvirtd = {
-      enable = true;
-      onBoot = "ignore";
+    enable = true;
+    onBoot = "ignore";
   };
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ];
+  environment.systemPackages = with pkgs; [virt-manager];
   systemd.services.libvirtd.restartIfChanged = false;
-
 }

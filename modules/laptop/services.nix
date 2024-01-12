@@ -1,9 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 # let
-  # baseconfig = { allowUnfree = true; allowBroken = true; };
-  # unstable = import (
-    # fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
-  # ) { config = baseconfig; };
+# baseconfig = { allowUnfree = true; allowBroken = true; };
+# unstable = import (
+# fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
+# ) { config = baseconfig; };
 # in
 {
   # imports = [ ./helper-modules/clipcat.nix ];
@@ -19,11 +24,11 @@
       enable = true; # clipboard daemon
       # @Reference to unmark a broken haskell package, wth..
       # package = (with pkgs.haskell.lib; markUnbroken (addExtraLibrary pkgs.haskellPackages.greenclip pkgs.xlibs.libXScrnSaver));
-      package = pkgs.haskell.lib.overrideCabal pkgs.haskellPackages.greenclip  (oa: {
+      package = pkgs.haskell.lib.overrideCabal pkgs.haskellPackages.greenclip (oa: {
         src = pkgs.fetchFromGitHub {
-          owner  = "erebe";
-          repo   = "greenclip";
-          rev    = "b98bb1d3487cc192a5771579d21674ca9480a9b3";
+          owner = "erebe";
+          repo = "greenclip";
+          rev = "b98bb1d3487cc192a5771579d21674ca9480a9b3";
           sha256 = "1jkx0i3a92190chz5ddy7g0afnzjn6d87wxk0ssxmsqji79mdiyj";
         };
       });
@@ -121,7 +126,6 @@
       wpa_supplicant.restartIfChanged = false;
 
       lock-before-sleeping = {
-
         restartIfChanged = false;
 
         unitConfig = {
@@ -134,7 +138,7 @@
         before = [
           "pre-sleep.service"
         ];
-        wantedBy= [
+        wantedBy = [
           "pre-sleep.service"
         ];
         environment = {
@@ -156,6 +160,11 @@
     user = "gurkan";
   };
 
-  # android settings
-  programs.adb.enable = true;
+  programs = {
+    # android settings
+    adb.enable = true;
+
+    # Sets setuid wrapper for slock
+    slock.enable = true;
+  };
 }

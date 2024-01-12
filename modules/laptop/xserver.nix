@@ -1,17 +1,20 @@
-{ config, pkgs, ... }:
-  # let
-    # baseconfig = { allowUnfree = true; };
-    # unstable = import (
-      # fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
-    # ) { config = baseconfig; };
-  # in
 {
-  imports =
-  [
+  config,
+  pkgs,
+  ...
+}:
+# let
+# baseconfig = { allowUnfree = true; };
+# unstable = import (
+# fetchTarball https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz
+# ) { config = baseconfig; };
+# in
+{
+  imports = [
     ./loose.nix
   ];
 
-  boot.blacklistedKernelModules = [ "nouveau" ];
+  boot.blacklistedKernelModules = ["nouveau"];
 
   services = {
     xserver = {
@@ -28,8 +31,8 @@
 
         # Can't work yet: https://discourse.nixos.org/t/awesomewm-luamodules-apparently-not-taking-effect/8507/2
         # luaModules = [
-          # pkgs.luaPackages.penlight
-          # pkgs.luaPackages.inspect
+        # pkgs.luaPackages.penlight
+        # pkgs.luaPackages.inspect
         # ];
       };
 
@@ -52,7 +55,7 @@
           enable = true;
           user = "gurkan";
         };
-        lightdm= {
+        lightdm = {
           enable = true;
           greeter.enable = false;
         };
@@ -65,12 +68,11 @@
           naturalScrolling = true;
         };
       };
-
-      extraLayouts.workman-p-tr = {
-        description = "My workman turkish mod";
-        languages = [ "eng" ];
-        symbolsFile = ./helper-modules/workman-p-tr;
-      };
+      # extraLayouts.workman-p-tr = {
+      #   description = "My workman turkish mod";
+      #   languages = [ "eng" ];
+      #   symbolsFile = ./helper-modules/workman-p-tr;
+      # };
     };
   };
 
@@ -91,3 +93,4 @@
   '';
 }
 #  vim: set ts=2 sw=2 tw=0 et :
+

@@ -1,5 +1,9 @@
-{ config, lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./helper-modules/usb-wakeup-disable.nix
     ./helper-modules/v4l2loopback.nix
@@ -12,7 +16,7 @@
     keyboard.zsa.enable = true;
     enableRedistributableFirmware = true;
 
-    firmware = [ pkgs.firmwareLinuxNonfree ];
+    firmware = [pkgs.firmwareLinuxNonfree];
 
     opengl = {
       enable = true;
