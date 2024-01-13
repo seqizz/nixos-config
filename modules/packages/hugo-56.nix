@@ -4,7 +4,7 @@
 }:
 
 stdenv.mkDerivation rec {
-  name = "hugo-old-${version}";
+  name = "hugo-56-${version}";
   version = "0.56.1";
 
   src = fetchurl {
@@ -17,12 +17,12 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    install -m755 -D hugo $out/bin/hugo-old
+    install -m755 -D hugo $out/bin/hugo-56
   '';
 
   meta = with lib; {
     homepage = https://gohugo.io;
-    description = "A static site generator";
+    description = "A static site generator, older version to support my stuff";
     platforms = platforms.linux;
     maintainers = with maintainers; [ seqizz ];
   };
