@@ -18,13 +18,13 @@ in
 python3Packages.buildPythonApplication rec {
 
   pname = "loose";
-  version = "unstable-2024-01-04";
+  version = "unstable-2024-01-17";
   pyproject = true;
 
   src = fetchgit {
     url = "https://git.gurkan.in/gurkan/loose.git";
-    rev = "af397b6f73853afdabb0c31efadaaf2740474581";
-    sha256 = "1ln65204scfwlnzb5gh2k3haw4x44ckqsfzimdmnar7hvwhav4fp";
+    rev = "c444c0d343a5cd6f3486de8e0833770d8a056ca0";
+    sha256 = "1hsxplj7bvnzhs5s8wg3wigwxsk8mnbz3lf0qn8ypg58ril8528b";
   };
 
   nativeBuildInputs = with python3Packages; [
