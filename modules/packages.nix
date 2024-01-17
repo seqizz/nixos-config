@@ -49,18 +49,28 @@ in {
   environment.systemPackages = with pkgs; [
     (python3.withPackages (ps:
       with ps; [
-        setuptools
-        pip
+        black
         ipython
+        isort
         pep8
-        virtualenv
+        pip
         poetry-core
+        setuptools
+        virtualenv
       ]))
     # unstable is better for some packages
     unstable.rustypaste-cli
     unstable.sheldon # zsh plugin manager
     unstable.igrep
 
+    # Code formatters
+    alejandra # Nix
+    nodePackages.fixjson
+    puppet-lint
+    shellcheck
+    stylua
+
+    # Rest is sorted
     bandwhich
     bat
     bc
