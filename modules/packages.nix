@@ -69,6 +69,7 @@ in {
     puppet-lint
     shellcheck
     stylua
+    taplo # toml
 
     # Rest is sorted
     bandwhich

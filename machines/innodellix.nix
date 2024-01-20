@@ -118,7 +118,14 @@ in
   };
 
   services = {
-    printing.drivers = [ pkgs.hplipWithPlugin ];
+    printing.drivers = with pkgs; [
+      hplipWithPlugin
+      gutenprint
+      splix
+    ];
   };
+  environment.systemPackages = with pkgs; [
+    cifs-utils
+  ];
 }
 #  vim: set ts=2 sw=2 tw=0 et :

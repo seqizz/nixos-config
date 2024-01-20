@@ -42,6 +42,7 @@
     avahi = {
       enable = true;
       nssmdns = true;
+      openFirewall = true;
     };
     samba.enable = true;
 
